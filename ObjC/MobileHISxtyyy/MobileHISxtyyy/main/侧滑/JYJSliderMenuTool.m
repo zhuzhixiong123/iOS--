@@ -38,6 +38,7 @@ static UIWindow *window_;
     window_.hidden = YES;
     window_.rootViewController = nil;
     window_ = nil;
+    
 }
 
 @end

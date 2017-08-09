@@ -11,8 +11,6 @@
 #import "JYJCommenItem.h"
 #import "JYJProfileCell.h"
 
-
-
 @interface JYJPersonViewController () <UITableViewDelegate, UITableViewDataSource>
 /** tableView */
 @property (nonatomic, weak) UITableView *tableView;
@@ -37,14 +35,13 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     [self setupUI];
-    
     [self setupData];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.tableView.frame = self.view.bounds;
-    self.headerIcon.frame = CGRectMake(self.tableView.frame.size.width / 2 - 36, 39, 72, 72);
+    self.headerIcon.frame = CGRectMake(self.tableView.frame.size.width / 2 - 33, 88, 66, 66);
 }
 
 - (void)setupUI {
@@ -56,35 +53,51 @@
     tableView.showsVerticalScrollIndicator = NO;
     tableView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:tableView];
+   
     self.tableView = tableView;
     
     UIView *headerView = [[UIView alloc] init];
-    headerView.backgroundColor = RGBACOLOR(223, 223, 223, 1.0);
-    headerView.frame = CGRectMake(0, 0, 0, 150);
+    headerView.backgroundColor = [UIColor whiteColor];
+    headerView.frame = CGRectMake(0, 0, 0, 200);
     self.tableView.tableHeaderView = headerView;
     
     /** 头像图片 */
     UIImageView *headerIcon = [[UIImageView alloc] init];
     headerIcon.backgroundColor = [UIColor grayColor];
-    headerIcon.frame = CGRectMake(0, 39, 72, 72);
-    headerIcon.layer.cornerRadius = 36;
+    headerIcon.frame = CGRectMake(0, 0, 72, 72);
+    headerIcon.layer.cornerRadius = 33;
     headerIcon.clipsToBounds = YES;
     [headerView addSubview:headerIcon];
     self.headerIcon = headerIcon;
+    
+    
+    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(20, Screen_H - 80, 100, 30)];
+    [btn setTitle:@"退出登陆" forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(exitClick) forControlEvents:UIControlEventTouchUpInside];
+    [btn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+    [tableView addSubview:btn];
+    
+}
+
+
+-(void)exitClick{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"退出登陆" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+    
+    [alert show];
+
 }
 
 
 - (void)setupData {
-    JYJCommenItem *myWallet = [JYJCommenItem itemWithIcon:@"menu_wallet" title:@"我的钱包" subtitle:@""];
+    JYJCommenItem *myWallet = [JYJCommenItem itemWithIcon:@"menu_wallet" title:@"班表" subtitle:@""];
     
-    JYJCommenItem *myCoupon = [JYJCommenItem itemWithIcon:@"menu_promo" title:@"我的卡券" subtitle:@""];
+    JYJCommenItem *myCoupon = [JYJCommenItem itemWithIcon:@"menu_promo" title:@"文章" subtitle:@""];
     
-    JYJCommenItem *myTrip = [JYJCommenItem itemWithIcon:@"menu_trips" title:@"我的行程" subtitle:nil];
+    JYJCommenItem *myTrip = [JYJCommenItem itemWithIcon:@"menu_trips" title:@"收藏" subtitle:nil];
     
-    JYJCommenItem *myFriend = [JYJCommenItem itemWithIcon:@"menu_invite" title:@"邀请好友" subtitle:nil];
+    JYJCommenItem *myFriend = [JYJCommenItem itemWithIcon:@"menu_invite" title:@"设置" subtitle:nil];
     
-    JYJCommenItem *mySticker = [JYJCommenItem itemWithIcon:@"menu_sticker" title:@"我的贴纸" subtitle:nil];
-    self.data = @[myWallet, myCoupon, myTrip, myFriend, mySticker];
+    self.data = @[myWallet, myCoupon, myTrip, myFriend];
 }
 
 #pragma mark - TableView DataSource
@@ -105,12 +118,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    testController *vc = [[testController alloc] init];
-    [self.navigationController pushViewController:vc animated:YES];
-    
-    
-    
-
+    if (indexPath.row == 0) {
+        testController *vc = [[testController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+        return;
+    }
 }
 
 

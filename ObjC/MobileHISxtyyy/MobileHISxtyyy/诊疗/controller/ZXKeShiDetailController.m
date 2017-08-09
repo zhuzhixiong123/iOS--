@@ -27,8 +27,12 @@
 -(void)setUpVc{
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationItem.title = @"详细信息";
+    
+ 
 
 }
+
+
 
 -(void)loadHeadView{
     UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 64, Screen_H, 120)];
@@ -45,8 +49,7 @@
     
     //创建所有按钮
     
-    
-    
+
     
     UIScrollView *scrollview = [[UIScrollView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(titleView.frame), Screen_W, Screen_H - CGRectGetMaxY(titleView.frame))];
     scrollview.delegate = self;

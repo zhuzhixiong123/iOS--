@@ -14,9 +14,12 @@
 
 @implementation testController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self loadBody];
+    
+   
 }
 
 
@@ -24,17 +27,14 @@
     self.view.backgroundColor = [UIColor whiteColor];
 self.navigationItem.title = @"test";
     
-//    self.navigationItem.leftBarButtonItem = [UIBarButtonItem backItemWithImageName:@"icon_right_arrow" andHighName:@"icon_right_arrow" target:self action:@selector(back) andTitle:@"返回"];
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem backItemWithImageName:@"icon_right_arrow" andHighName:@"icon_right_arrow" target:self action:@selector(back) andTitle:@"返回"];
 
 }
 
 -(void)back{
-   
-//    [self.navigationController popViewControllerAnimated:YES];
-    
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"zhuzhu" object:nil];
-    
-
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"zhuzhu" object:nil
+     ];
+  
 
 }
 

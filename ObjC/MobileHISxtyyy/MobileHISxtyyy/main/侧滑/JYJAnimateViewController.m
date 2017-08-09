@@ -111,7 +111,7 @@ static CGFloat const animationTime = 0.4;
     // 添加控制器
     JYJPersonViewController *leftVc = [[JYJPersonViewController alloc] init];
     leftVc.view.backgroundColor = [UIColor redColor];
-    CGFloat width = [UIScreen mainScreen].bounds.size.width - 75;
+    CGFloat width = [UIScreen mainScreen].bounds.size.width - 100;
     if ([UIScreen mainScreen].bounds.size.width > 375) {
         width -= 50;
     } else if ([UIScreen mainScreen].bounds.size.width > 320) {
@@ -136,6 +136,7 @@ static CGFloat const animationTime = 0.4;
  * 点击手势
  */
 - (void)closeSideBar {
+     NSLog(@"zhuzhuz");
     [self closeAnimation];
 }
 

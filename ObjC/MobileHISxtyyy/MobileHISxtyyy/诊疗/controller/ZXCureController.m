@@ -46,7 +46,6 @@
 /** panGestureRec */
 @property (nonatomic, strong) UIPanGestureRecognizer *panGestureRec;
 
-
 @end
 
 @implementation ZXCureController
@@ -251,6 +250,7 @@
 }
 
 -(void)btnClick:(UIButton*)btn{
+
     [self changeBtnColor:btn];
     [self moveYellowLable:btn];
     
