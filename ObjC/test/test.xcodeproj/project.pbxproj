@@ -15,6 +15,8 @@
 		14A785331F32C31B00EB0FF2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14A785311F32C31B00EB0FF2 /* LaunchScreen.storyboard */; };
 		14A7853E1F32C31B00EB0FF2 /* testTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A7853D1F32C31B00EB0FF2 /* testTests.m */; };
 		14A785491F32C31B00EB0FF2 /* testUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A785481F32C31B00EB0FF2 /* testUITests.m */; };
+		8A8A72AC1F3858DF001C1ECB /* UITableView+SDAutoTableViewCellHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A8A72A91F3858DF001C1ECB /* UITableView+SDAutoTableViewCellHeight.m */; };
+		8A8A72AD1F3858DF001C1ECB /* UIView+SDAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A8A72AB1F3858DF001C1ECB /* UIView+SDAutoLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +42,7 @@
 		14A785261F32C31B00EB0FF2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		14A785271F32C31B00EB0FF2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		14A785291F32C31B00EB0FF2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		14A7852A1F32C31B00EB0FF2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		14A7852A1F32C31B00EB0FF2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ViewController.m; sourceTree = "<group>"; };
 		14A7852D1F32C31B00EB0FF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		14A7852F1F32C31B00EB0FF2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		14A785321F32C31B00EB0FF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +53,11 @@
 		14A785441F32C31B00EB0FF2 /* testUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = testUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		14A785481F32C31B00EB0FF2 /* testUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = testUITests.m; sourceTree = "<group>"; };
 		14A7854A1F32C31B00EB0FF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A8A72A71F3858DF001C1ECB /* SDAutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDAutoLayout.h; sourceTree = "<group>"; };
+		8A8A72A81F3858DF001C1ECB /* UITableView+SDAutoTableViewCellHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+SDAutoTableViewCellHeight.h"; sourceTree = "<group>"; };
+		8A8A72A91F3858DF001C1ECB /* UITableView+SDAutoTableViewCellHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+SDAutoTableViewCellHeight.m"; sourceTree = "<group>"; };
+		8A8A72AA1F3858DF001C1ECB /* UIView+SDAutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SDAutoLayout.h"; sourceTree = "<group>"; };
+		8A8A72AB1F3858DF001C1ECB /* UIView+SDAutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SDAutoLayout.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +108,7 @@
 		14A785221F32C31B00EB0FF2 /* test */ = {
 			isa = PBXGroup;
 			children = (
+				8A8A72A61F3858DF001C1ECB /* SDAutoLayout */,
 				14A785261F32C31B00EB0FF2 /* AppDelegate.h */,
 				14A785271F32C31B00EB0FF2 /* AppDelegate.m */,
 				14A785291F32C31B00EB0FF2 /* ViewController.h */,
@@ -138,6 +146,18 @@
 				14A7854A1F32C31B00EB0FF2 /* Info.plist */,
 			);
 			path = testUITests;
+			sourceTree = "<group>";
+		};
+		8A8A72A61F3858DF001C1ECB /* SDAutoLayout */ = {
+			isa = PBXGroup;
+			children = (
+				8A8A72A71F3858DF001C1ECB /* SDAutoLayout.h */,
+				8A8A72A81F3858DF001C1ECB /* UITableView+SDAutoTableViewCellHeight.h */,
+				8A8A72A91F3858DF001C1ECB /* UITableView+SDAutoTableViewCellHeight.m */,
+				8A8A72AA1F3858DF001C1ECB /* UIView+SDAutoLayout.h */,
+				8A8A72AB1F3858DF001C1ECB /* UIView+SDAutoLayout.m */,
+			);
+			path = SDAutoLayout;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,7 +298,9 @@
 			files = (
 				14A7852B1F32C31B00EB0FF2 /* ViewController.m in Sources */,
 				14A785281F32C31B00EB0FF2 /* AppDelegate.m in Sources */,
+				8A8A72AC1F3858DF001C1ECB /* UITableView+SDAutoTableViewCellHeight.m in Sources */,
 				14A785251F32C31B00EB0FF2 /* main.m in Sources */,
+				8A8A72AD1F3858DF001C1ECB /* UIView+SDAutoLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,6 +540,7 @@
 				14A7854F1F32C31B00EB0FF2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		14A785501F32C31B00EB0FF2 /* Build configuration list for PBXNativeTarget "testTests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +549,7 @@
 				14A785521F32C31B00EB0FF2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		14A785531F32C31B00EB0FF2 /* Build configuration list for PBXNativeTarget "testUITests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +558,7 @@
 				14A785551F32C31B00EB0FF2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

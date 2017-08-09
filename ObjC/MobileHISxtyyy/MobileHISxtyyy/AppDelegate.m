@@ -1,12 +1,15 @@
 //
 //  AppDelegate.m
-//  test
+//  MobileHISxtyyy
 //
-//  Created by 志雄 朱 on 2017/8/3.
+//  Created by 志雄 朱 on 2017/7/24.
 //  Copyright © 2017年 志雄 朱. All rights reserved.
 //
 
 #import "AppDelegate.h"
+#import "HMTabbarController.h"
+
+#import "ZXLoginController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +19,11 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
+
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    ZXLoginController *Vc = [[ZXLoginController alloc] init];
+    [self.window setRootViewController:Vc];
+    [self.window makeKeyAndVisible];
     return YES;
 }
 

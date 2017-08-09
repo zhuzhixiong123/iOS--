@@ -1,0 +1,32 @@
+//
+//  PrefixHeader.pch
+//  MobileHISxtyyy
+//
+//  Created by 志雄 朱 on 2017/7/25.
+//  Copyright © 2017年 志雄 朱. All rights reserved.
+//
+///Users/zhixiongzhu/Desktop/HIS(new)/MobileHIS/ios/MobileHISxtyyy/MobileHISxtyyy/other/PrefixHeader.pch
+
+#import "UIBarButtonItem+item.h"
+#import "UIView+frame.h"
+#import "AFNetworking.h"
+#import "SVProgressHUD.h"
+#import "NSString+NTES.h"
+#import "MJExtension.h"
+#import "MJRefresh.h"
+
+
+#define Screen_H            [UIScreen mainScreen].bounds.size.height
+#define Screen_W            [UIScreen mainScreen].bounds.size.width
+#define Navi_H              64.0f
+#define TabBar_H            49.0f
+#define margin 10
+
+#define iPhone4         [UIScreen mainScreen].bounds.size.height == 480
+#define iPhone5         [UIScreen mainScreen].bounds.size.height == 568
+#define iPhone6         [UIScreen mainScreen].bounds.size.height == 667
+#define iPhone6Plus     [UIScreen mainScreen].bounds.size.height == 736
+
+#define RGBACOLOR(r,g,b,a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]
+
+#define HMColor RGBACOLOR(247,247,247,1.0f)
