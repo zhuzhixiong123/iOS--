@@ -30,7 +30,7 @@
     if (cell == nil) {
         cell = [[JYJProfileCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:ID];
     }
-//    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.selectionStyle = UITableViewCellSelectionStyleGray;
     return cell;
 }
 
@@ -125,7 +125,6 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
-    // Configure the view for the selected state
 }
 
 @end

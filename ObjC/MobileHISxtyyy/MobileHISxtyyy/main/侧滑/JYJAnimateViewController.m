@@ -24,10 +24,10 @@ static CGFloat const animationTime = 0.4;
 
 @implementation JYJAnimateViewController
 
-// 控制状态栏
-- (BOOL)prefersStatusBarHidden {
-    return self.hideStatusBar;
-}
+//// 控制状态栏
+//- (BOOL)prefersStatusBarHidden {
+//    return self.hideStatusBar;
+//}
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
@@ -42,7 +42,7 @@ static CGFloat const animationTime = 0.4;
     // 第一次进来，隐藏状态栏
     if (!self.hasShow) {
         self.hasShow = YES;
-        self.hideStatusBar = YES;
+//        self.hideStatusBar = YES;
         [UIView animateWithDuration:animationTime animations:^{
             [self setNeedsStatusBarAppearanceUpdate];
             self.rootViewController.navigationController.navigationBar.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 64);
@@ -73,7 +73,7 @@ static CGFloat const animationTime = 0.4;
         self.bgView.alpha = 0.0;
     } completion:^(BOOL finished) {
         // 让状态栏出现
-        self.hideStatusBar = NO;
+//        self.hideStatusBar = NO;
         if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 10.0) {
             [UIView animateWithDuration:animationTime animations:^{
                 [self setNeedsStatusBarAppearanceUpdate];
@@ -89,12 +89,6 @@ static CGFloat const animationTime = 0.4;
     [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 
-- (void)btnclick {
-//    JYJPushBaseViewController *vc = [[JYJPushBaseViewController alloc] init];
-//    vc.view.backgroundColor = [UIColor greenColor];
-//    vc.animateViewController = self;
-//    [self.navigationController pushViewController:vc animated:YES];
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -117,7 +111,7 @@ static CGFloat const animationTime = 0.4;
     // 添加控制器
     JYJPersonViewController *leftVc = [[JYJPersonViewController alloc] init];
     leftVc.view.backgroundColor = [UIColor redColor];
-    CGFloat width = [UIScreen mainScreen].bounds.size.width - 50;
+    CGFloat width = [UIScreen mainScreen].bounds.size.width - 75;
     if ([UIScreen mainScreen].bounds.size.width > 375) {
         width -= 50;
     } else if ([UIScreen mainScreen].bounds.size.width > 320) {
@@ -128,14 +122,16 @@ static CGFloat const animationTime = 0.4;
     [self addChildViewController:leftVc];
     self.leftVc = leftVc;
     
-    //    UIButton *btn1 =  [[UIButton alloc] init];
-    //    btn1.backgroundColor = [UIColor greenColor];
-    //    [btn1 addTarget:self action:@selector(btnclick) forControlEvents:UIControlEventTouchUpInside];
-    //    btn1.frame = CGRectMake(50, 100, 100, 100);
-    //    [leftVc.view addSubview:btn1];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(noteClick) name:@"zhuzhu" object:nil];
+    
     
 }
 
+-(void)noteClick{
+         [self closeSideBar];
+
+}
 /**
  * 点击手势
  */
@@ -178,7 +174,7 @@ static CGFloat const animationTime = 0.4;
         self.bgView.alpha = (1 + leftVcX / self.leftVc.view.frame.size.width) * 0.5;
         // 设置左边控制器的frame
         [self.leftVc.view setFrame:CGRectMake(leftVcX, 0, self.leftVc.view.frame.size.width, self.leftVc.view.frame.size.height)];
-        //        NSLog(@"%f", self.leftVc.view.frame.origin.x);
+                NSLog(@"%f", self.leftVc.view.frame.origin.x);
     }
     // 手势结束
     if (panGes.state == UIGestureRecognizerStateEnded) {

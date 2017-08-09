@@ -13,5 +13,5 @@
 @property (nonatomic, strong) UIViewController *rootViewController;
 
 /** hideStatusBar */
-@property (nonatomic, assign) BOOL hideStatusBar;
+//@property (nonatomic, assign) BOOL hideStatusBar;
 @end

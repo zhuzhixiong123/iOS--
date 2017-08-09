@@ -81,6 +81,7 @@
 		8A547C081F3AAE37000DF5CB /* JYJProfileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A547C051F3AAE37000DF5CB /* JYJProfileCell.m */; };
 		8A547C0C1F3AAF3E000DF5CB /* JYJSliderMenuTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A547C0B1F3AAF3E000DF5CB /* JYJSliderMenuTool.m */; };
 		8A547C0F1F3AAF73000DF5CB /* JYJAnimateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A547C0E1F3AAF73000DF5CB /* JYJAnimateViewController.m */; };
+		8A547C121F3AB97B000DF5CB /* testController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A547C111F3AB97B000DF5CB /* testController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -251,6 +252,8 @@
 		8A547C0B1F3AAF3E000DF5CB /* JYJSliderMenuTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYJSliderMenuTool.m; sourceTree = "<group>"; };
 		8A547C0D1F3AAF73000DF5CB /* JYJAnimateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYJAnimateViewController.h; sourceTree = "<group>"; };
 		8A547C0E1F3AAF73000DF5CB /* JYJAnimateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYJAnimateViewController.m; sourceTree = "<group>"; };
+		8A547C101F3AB97B000DF5CB /* testController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testController.h; sourceTree = "<group>"; };
+		8A547C111F3AB97B000DF5CB /* testController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -753,6 +756,8 @@
 			children = (
 				8A547BFE1F3AAE37000DF5CB /* JYJPersonViewController.h */,
 				8A547BFF1F3AAE37000DF5CB /* JYJPersonViewController.m */,
+				8A547C101F3AB97B000DF5CB /* testController.h */,
+				8A547C111F3AB97B000DF5CB /* testController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -967,6 +972,7 @@
 				1428E6F71F29D75A0086BD4E /* MJRefreshBackStateFooter.m in Sources */,
 				143D924B1F26D6F100499921 /* UIImage+image.m in Sources */,
 				1454380B1F28892300C57BD9 /* MJFoundation.m in Sources */,
+				8A547C121F3AB97B000DF5CB /* testController.m in Sources */,
 				8A547C0F1F3AAF73000DF5CB /* JYJAnimateViewController.m in Sources */,
 				143D92301F26D49A00499921 /* HMTabbarController.m in Sources */,
 				1428E6F31F29D75A0086BD4E /* MJRefreshAutoNormalFooter.m in Sources */,

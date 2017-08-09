@@ -7,15 +7,10 @@
 //
 
 #import "JYJPersonViewController.h"
-//#import "JYJMyWalletViewController.h"
-//#import "JYJMyCardViewController.h"
-//#import "JYJMyTripViewController.h"
-//#import "JYJMyFriendViewController.h"
-//#import "JYJMyStickerViewController.h"
+#import "testController.h"
 #import "JYJCommenItem.h"
 #import "JYJProfileCell.h"
-//#import "JYJPushBaseViewController.h"
-//#import "JYJAnimateViewController.h"
+
 
 
 @interface JYJPersonViewController () <UITableViewDelegate, UITableViewDataSource>
@@ -64,14 +59,13 @@
     self.tableView = tableView;
     
     UIView *headerView = [[UIView alloc] init];
-    headerView.backgroundColor = [UIColor colorWithRed:245 / 255.0 green:247 / 255.0 blue:250 / 255.0 alpha:1.0];
+    headerView.backgroundColor = RGBACOLOR(223, 223, 223, 1.0);
     headerView.frame = CGRectMake(0, 0, 0, 150);
     self.tableView.tableHeaderView = headerView;
     
     /** 头像图片 */
     UIImageView *headerIcon = [[UIImageView alloc] init];
     headerIcon.backgroundColor = [UIColor grayColor];
-//    headerIcon.image = [UIImage imageNamed:@"avatar_login"];
     headerIcon.frame = CGRectMake(0, 39, 72, 72);
     headerIcon.layer.cornerRadius = 36;
     headerIcon.clipsToBounds = YES;
@@ -111,10 +105,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    testController *vc = [[testController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
     
-    JYJCommenItem *item = self.data[indexPath.row];
-    if (item.destVcClass == nil) return;
+    
     
 
 }

@@ -17,7 +17,7 @@
 
 #import "JYJSliderMenuTool.h"
 
-@interface ZXCureController ()<UIScrollViewDelegate>
+@interface ZXCureController ()<UIScrollViewDelegate,UIGestureRecognizerDelegate>
 
 @property(nonatomic,strong) NSArray *titleS;
 
@@ -40,6 +40,12 @@
 
 //保存科室的数组
 @property(nonatomic,strong) NSArray *keshiS;
+
+/** tapGestureRec */
+@property (nonatomic, weak) UITapGestureRecognizer *tapGestureRec;
+/** panGestureRec */
+@property (nonatomic, strong) UIPanGestureRecognizer *panGestureRec;
+
 
 @end
 
@@ -123,15 +129,42 @@
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem backItemWithImageName:@"" andHighName:@"" target:self action:@selector(rightClick:) andTitle:@"选科室"];
     
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem backItemWithImageName:@"" andHighName:@"" target:self action:@selector(leftClick) andTitle:@"侧滑"];
+    
+    
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    // 这个方法是为了，不让隐藏状态栏的时候出现view上移
+    self.extendedLayoutIncludesOpaqueBars = YES;
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    
+    // 屏幕边缘pan手势(优先级高于其他手势)
+    UIScreenEdgePanGestureRecognizer *leftEdgeGesture = [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self
+                                                                                                          action:@selector(moveViewWithGesture:)];
+    leftEdgeGesture.edges = UIRectEdgeLeft;// 屏幕左侧边缘响应
+    [self.view addGestureRecognizer:leftEdgeGesture];
+    // 这里是地图处理方式，遵守代理协议，实现代理方法
+    leftEdgeGesture.delegate = self;
+    
+
+}
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldBeRequiredToFailByGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    BOOL result = NO;
+    if ([gestureRecognizer isKindOfClass:[UIScreenEdgePanGestureRecognizer class]]) {
+        result = YES;
+    }
+    return result;
 }
 
+
+- (void)moveViewWithGesture:(UIPanGestureRecognizer *)panGes {
+    if (panGes.state == UIGestureRecognizerStateEnded) {
+        [self leftClick];
+    }
+}
 
 -(void)leftClick{
     // 展示个人中心
     [JYJSliderMenuTool showWithRootViewController:self];
-    
-    
-
 }
 
 -(void)rightClick:(UIButton*)optionButton{
