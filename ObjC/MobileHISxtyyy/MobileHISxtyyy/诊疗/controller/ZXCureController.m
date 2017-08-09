@@ -15,6 +15,8 @@
 #import "FKGPopOption.h"
 
 
+#import "JYJSliderMenuTool.h"
+
 @interface ZXCureController ()<UIScrollViewDelegate>
 
 @property(nonatomic,strong) NSArray *titleS;
@@ -119,8 +121,18 @@
     
     
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem backItemWithImageName:@"" andHighName:@"" target:self action:@selector(rightClick:) andTitle:@"选科室"];
+    
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem backItemWithImageName:@"" andHighName:@"" target:self action:@selector(leftClick) andTitle:@"侧滑"];
 }
 
+
+-(void)leftClick{
+    // 展示个人中心
+    [JYJSliderMenuTool showWithRootViewController:self];
+    
+    
+
+}
 
 -(void)rightClick:(UIButton*)optionButton{
     AFHTTPSessionManager *maneger = [AFHTTPSessionManager manager];

@@ -76,6 +76,11 @@
 		14F29AED1F25F77400ACE970 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14F29AEB1F25F77400ACE970 /* LaunchScreen.storyboard */; };
 		14F29AF81F25F77400ACE970 /* MobileHISxtyyyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F29AF71F25F77400ACE970 /* MobileHISxtyyyTests.m */; };
 		14F29B031F25F77400ACE970 /* MobileHISxtyyyUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F29B021F25F77400ACE970 /* MobileHISxtyyyUITests.m */; };
+		8A547C061F3AAE37000DF5CB /* JYJPersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A547BFF1F3AAE37000DF5CB /* JYJPersonViewController.m */; };
+		8A547C071F3AAE37000DF5CB /* JYJCommenItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A547C021F3AAE37000DF5CB /* JYJCommenItem.m */; };
+		8A547C081F3AAE37000DF5CB /* JYJProfileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A547C051F3AAE37000DF5CB /* JYJProfileCell.m */; };
+		8A547C0C1F3AAF3E000DF5CB /* JYJSliderMenuTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A547C0B1F3AAF3E000DF5CB /* JYJSliderMenuTool.m */; };
+		8A547C0F1F3AAF73000DF5CB /* JYJAnimateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A547C0E1F3AAF73000DF5CB /* JYJAnimateViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -236,6 +241,16 @@
 		14F29AFE1F25F77400ACE970 /* MobileHISxtyyyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MobileHISxtyyyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		14F29B021F25F77400ACE970 /* MobileHISxtyyyUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MobileHISxtyyyUITests.m; sourceTree = "<group>"; };
 		14F29B041F25F77400ACE970 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A547BFE1F3AAE37000DF5CB /* JYJPersonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYJPersonViewController.h; sourceTree = "<group>"; };
+		8A547BFF1F3AAE37000DF5CB /* JYJPersonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYJPersonViewController.m; sourceTree = "<group>"; };
+		8A547C011F3AAE37000DF5CB /* JYJCommenItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYJCommenItem.h; sourceTree = "<group>"; };
+		8A547C021F3AAE37000DF5CB /* JYJCommenItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYJCommenItem.m; sourceTree = "<group>"; };
+		8A547C041F3AAE37000DF5CB /* JYJProfileCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYJProfileCell.h; sourceTree = "<group>"; };
+		8A547C051F3AAE37000DF5CB /* JYJProfileCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYJProfileCell.m; sourceTree = "<group>"; };
+		8A547C0A1F3AAF3E000DF5CB /* JYJSliderMenuTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYJSliderMenuTool.h; sourceTree = "<group>"; };
+		8A547C0B1F3AAF3E000DF5CB /* JYJSliderMenuTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYJSliderMenuTool.m; sourceTree = "<group>"; };
+		8A547C0D1F3AAF73000DF5CB /* JYJAnimateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYJAnimateViewController.h; sourceTree = "<group>"; };
+		8A547C0E1F3AAF73000DF5CB /* JYJAnimateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYJAnimateViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -495,6 +510,7 @@
 		143D92281F26D47900499921 /* main */ = {
 			isa = PBXGroup;
 			children = (
+				8A547C091F3AAF1A000DF5CB /* 侧滑 */,
 				143D92291F26D47900499921 /* controller */,
 				143D922A1F26D47900499921 /* view */,
 			);
@@ -680,6 +696,7 @@
 		14F29ADC1F25F77400ACE970 /* MobileHISxtyyy */ = {
 			isa = PBXGroup;
 			children = (
+				8A547BFC1F3AAE37000DF5CB /* Profile */,
 				143D92551F26EEBB00499921 /* libs */,
 				143D924E1F26E49400499921 /* login */,
 				143D92281F26D47900499921 /* main */,
@@ -719,6 +736,54 @@
 				14F29B041F25F77400ACE970 /* Info.plist */,
 			);
 			path = MobileHISxtyyyUITests;
+			sourceTree = "<group>";
+		};
+		8A547BFC1F3AAE37000DF5CB /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				8A547BFD1F3AAE37000DF5CB /* Controller */,
+				8A547C001F3AAE37000DF5CB /* Model */,
+				8A547C031F3AAE37000DF5CB /* View */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		8A547BFD1F3AAE37000DF5CB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8A547BFE1F3AAE37000DF5CB /* JYJPersonViewController.h */,
+				8A547BFF1F3AAE37000DF5CB /* JYJPersonViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8A547C001F3AAE37000DF5CB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8A547C011F3AAE37000DF5CB /* JYJCommenItem.h */,
+				8A547C021F3AAE37000DF5CB /* JYJCommenItem.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8A547C031F3AAE37000DF5CB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8A547C041F3AAE37000DF5CB /* JYJProfileCell.h */,
+				8A547C051F3AAE37000DF5CB /* JYJProfileCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8A547C091F3AAF1A000DF5CB /* 侧滑 */ = {
+			isa = PBXGroup;
+			children = (
+				8A547C0D1F3AAF73000DF5CB /* JYJAnimateViewController.h */,
+				8A547C0E1F3AAF73000DF5CB /* JYJAnimateViewController.m */,
+				8A547C0A1F3AAF3E000DF5CB /* JYJSliderMenuTool.h */,
+				8A547C0B1F3AAF3E000DF5CB /* JYJSliderMenuTool.m */,
+			);
+			path = "侧滑";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -864,6 +929,7 @@
 				1428E6F91F29D75A0086BD4E /* MJRefreshNormalHeader.m in Sources */,
 				143D92481F26D6F100499921 /* NSArray+Log.m in Sources */,
 				143D92981F26EF6D00499921 /* AFHTTPSessionManager.m in Sources */,
+				8A547C071F3AAE37000DF5CB /* JYJCommenItem.m in Sources */,
 				145438121F28892300C57BD9 /* NSObject+MJProperty.m in Sources */,
 				1428E6F51F29D75A0086BD4E /* MJRefreshBackGifFooter.m in Sources */,
 				1454380E1F28892300C57BD9 /* MJPropertyType.m in Sources */,
@@ -871,8 +937,11 @@
 				1428E6F61F29D75A0086BD4E /* MJRefreshBackNormalFooter.m in Sources */,
 				143D92751F26EF2000499921 /* SVRadialGradientLayer.m in Sources */,
 				1428E7041F29F0570086BD4E /* ZXKeShiDetailController.m in Sources */,
+				8A547C0C1F3AAF3E000DF5CB /* JYJSliderMenuTool.m in Sources */,
+				8A547C081F3AAE37000DF5CB /* JYJProfileCell.m in Sources */,
 				143D92491F26D6F100499921 /* NSString+NTES.m in Sources */,
 				143D92361F26D4E700499921 /* ZXMineController.m in Sources */,
+				8A547C061F3AAE37000DF5CB /* JYJPersonViewController.m in Sources */,
 				145438131F28892300C57BD9 /* NSString+MJExtension.m in Sources */,
 				143D92331F26D4B300499921 /* HMTabbar.m in Sources */,
 				1454381A1F28914100C57BD9 /* DLPickerView.m in Sources */,
@@ -898,6 +967,7 @@
 				1428E6F71F29D75A0086BD4E /* MJRefreshBackStateFooter.m in Sources */,
 				143D924B1F26D6F100499921 /* UIImage+image.m in Sources */,
 				1454380B1F28892300C57BD9 /* MJFoundation.m in Sources */,
+				8A547C0F1F3AAF73000DF5CB /* JYJAnimateViewController.m in Sources */,
 				143D92301F26D49A00499921 /* HMTabbarController.m in Sources */,
 				1428E6F31F29D75A0086BD4E /* MJRefreshAutoNormalFooter.m in Sources */,
 				143D924A1F26D6F100499921 /* UIBarButtonItem+item.m in Sources */,
