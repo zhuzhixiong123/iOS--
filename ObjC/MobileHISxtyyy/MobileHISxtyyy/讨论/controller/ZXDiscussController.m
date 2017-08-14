@@ -16,13 +16,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
     [self setUpVc];
 }
 
 -(void)setUpVc{
-
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationItem.title = @"讨论";
 

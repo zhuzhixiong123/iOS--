@@ -45,6 +45,8 @@
     
     UITextField *countF = [[UITextField alloc] initWithFrame:CGRectMake(25, CGRectGetMaxY(titleL.frame) + 88, Screen_W - 50, 32)];
     countF.placeholder = @"请输入用户名";
+    countF.keyboardType = UIKeyboardTypeNamePhonePad;
+    countF.clearButtonMode = UITextFieldViewModeAlways;
     self.countF = countF;
     countF.borderStyle = UITextBorderStyleRoundedRect;
     [self.view addSubview:countF];
@@ -52,6 +54,8 @@
     
     UITextField *mimaF = [[UITextField alloc] initWithFrame:CGRectMake(25, CGRectGetMaxY(countF.frame) + 25, Screen_W - 50, 32)];
     mimaF.placeholder = @"请输入密码";
+    mimaF.keyboardType = UIKeyboardTypeNumberPad;
+    mimaF.clearButtonMode = UITextFieldViewModeAlways;
     self.mimaF = mimaF;
     mimaF.borderStyle = UITextBorderStyleRoundedRect;
     [self.view addSubview:mimaF];
@@ -84,7 +88,7 @@
         return;
     }
     
-    
+    [self.view endEditing:YES];
     
     [SVProgressHUD showWithStatus:@"正在登录。。。"];
     AFHTTPSessionManager *manger=[AFHTTPSessionManager manager];
@@ -99,7 +103,6 @@
       NSLog(@"**-%@",result);
     
     if ([result isEqualToString:@"true"]) {
-        
         //登陆成功就把账号,密码保存起来
         [[NSUserDefaults standardUserDefaults] setObject:self.countF.text forKey:@"userID"];
         [[NSUserDefaults standardUserDefaults] setObject:self.mimaF.text forKey:@"mima"];
@@ -116,6 +119,7 @@
     
 } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
       [SVProgressHUD dismiss];
+    [SVProgressHUD showErrorWithStatus:@"请检查您的网络"];
 
 }];
     

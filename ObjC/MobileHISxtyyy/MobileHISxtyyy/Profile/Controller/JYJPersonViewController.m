@@ -79,12 +79,10 @@
     
 }
 
-
 -(void)exitClick{
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"退出登陆" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
     
     [alert show];
-
 }
 
 
@@ -117,7 +115,6 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     if (indexPath.row == 0) {
         testController *vc = [[testController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];

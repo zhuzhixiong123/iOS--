@@ -17,6 +17,8 @@
 		14A785491F32C31B00EB0FF2 /* testUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A785481F32C31B00EB0FF2 /* testUITests.m */; };
 		8A8A72AC1F3858DF001C1ECB /* UITableView+SDAutoTableViewCellHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A8A72A91F3858DF001C1ECB /* UITableView+SDAutoTableViewCellHeight.m */; };
 		8A8A72AD1F3858DF001C1ECB /* UIView+SDAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A8A72AB1F3858DF001C1ECB /* UIView+SDAutoLayout.m */; };
+		8AB958C41F3DABB100E23E28 /* ZXTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AB958C31F3DABB100E23E28 /* ZXTestView.m */; };
+		8AC259D61F3C6A3B0091CBFC /* testCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AC259D51F3C6A3B0091CBFC /* testCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,10 @@
 		8A8A72A91F3858DF001C1ECB /* UITableView+SDAutoTableViewCellHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+SDAutoTableViewCellHeight.m"; sourceTree = "<group>"; };
 		8A8A72AA1F3858DF001C1ECB /* UIView+SDAutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SDAutoLayout.h"; sourceTree = "<group>"; };
 		8A8A72AB1F3858DF001C1ECB /* UIView+SDAutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SDAutoLayout.m"; sourceTree = "<group>"; };
+		8AB958C21F3DABB100E23E28 /* ZXTestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXTestView.h; sourceTree = "<group>"; };
+		8AB958C31F3DABB100E23E28 /* ZXTestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXTestView.m; sourceTree = "<group>"; };
+		8AC259D41F3C6A3B0091CBFC /* testCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testCell.h; sourceTree = "<group>"; };
+		8AC259D51F3C6A3B0091CBFC /* testCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +119,10 @@
 				14A785271F32C31B00EB0FF2 /* AppDelegate.m */,
 				14A785291F32C31B00EB0FF2 /* ViewController.h */,
 				14A7852A1F32C31B00EB0FF2 /* ViewController.m */,
+				8AC259D41F3C6A3B0091CBFC /* testCell.h */,
+				8AC259D51F3C6A3B0091CBFC /* testCell.m */,
+				8AB958C21F3DABB100E23E28 /* ZXTestView.h */,
+				8AB958C31F3DABB100E23E28 /* ZXTestView.m */,
 				14A7852C1F32C31B00EB0FF2 /* Main.storyboard */,
 				14A7852F1F32C31B00EB0FF2 /* Assets.xcassets */,
 				14A785311F32C31B00EB0FF2 /* LaunchScreen.storyboard */,
@@ -299,6 +309,8 @@
 				14A7852B1F32C31B00EB0FF2 /* ViewController.m in Sources */,
 				14A785281F32C31B00EB0FF2 /* AppDelegate.m in Sources */,
 				8A8A72AC1F3858DF001C1ECB /* UITableView+SDAutoTableViewCellHeight.m in Sources */,
+				8AC259D61F3C6A3B0091CBFC /* testCell.m in Sources */,
+				8AB958C41F3DABB100E23E28 /* ZXTestView.m in Sources */,
 				14A785251F32C31B00EB0FF2 /* main.m in Sources */,
 				8A8A72AD1F3858DF001C1ECB /* UIView+SDAutoLayout.m in Sources */,
 			);
