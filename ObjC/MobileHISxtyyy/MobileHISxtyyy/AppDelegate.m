@@ -21,7 +21,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    ZXLoginController *Vc = [[ZXLoginController alloc] init];
+    HMTabbarController *Vc = [[HMTabbarController alloc] init];
     [self.window setRootViewController:Vc];
     [self.window makeKeyAndVisible];
     return YES;

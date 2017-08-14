@@ -41,8 +41,9 @@
 //保存科室的数组
 @property(nonatomic,strong) NSArray *keshiS;
 
-/** tapGestureRec */
-@property (nonatomic, weak) UITapGestureRecognizer *tapGestureRec;
+///** tapGestureRec */
+//@property (nonatomic, weak) UITapGestureRecognizer *tapGestureRec;
+
 /** panGestureRec */
 @property (nonatomic, strong) UIPanGestureRecognizer *panGestureRec;
 
@@ -141,7 +142,7 @@
                                                                                                           action:@selector(moveViewWithGesture:)];
     leftEdgeGesture.edges = UIRectEdgeLeft;// 屏幕左侧边缘响应
     [self.view addGestureRecognizer:leftEdgeGesture];
-    // 这里是地图处理方式，遵守代理协议，实现代理方法
+    // 遵守代理协议，实现代理方法
     leftEdgeGesture.delegate = self;
     
 
@@ -215,9 +216,7 @@
 }
 
 
-
 -(void)loadBody{
-
     CGFloat btn_w = Screen_W * 0.5;
     CGFloat btn_h = 44;
     
