@@ -264,7 +264,6 @@
     _selbtn = btn;
 }
 
-//移动小滑块
 //小黄快的移动
 -(void)moveYellowLable:(UIButton*)btn{
     NSInteger i = btn.tag;
