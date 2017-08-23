@@ -203,6 +203,9 @@
             NSLog(@"你选中了第%ld行 选项为：%@", index, content);
             if (index > 0) {
              NSDictionary *dict =  self.keshiS[index - 1];
+                
+                NSLog(@"****%@",dict);
+                
             [[NSNotificationCenter defaultCenter] postNotificationName:@"keshi_click" object:nil userInfo:dict];
             }
         } whichFrame:frame animate:YES] option_show];

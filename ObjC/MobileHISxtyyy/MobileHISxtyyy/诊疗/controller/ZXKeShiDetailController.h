@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class ZXKeShiListModel;
 @interface ZXKeShiDetailController : UIViewController
+
+@property(nonatomic,strong) ZXKeShiListModel *model;
 
 @end

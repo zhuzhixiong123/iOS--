@@ -35,7 +35,7 @@
         UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
         tableView.dataSource = self;
         tableView.delegate = self;
-        tableView.rowHeight = 51;
+        tableView.rowHeight = 90;
         [self.view addSubview:tableView];
         _tableView = tableView;
     }
@@ -110,7 +110,7 @@
     
     [maneger GET:urlString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
-        NSLog(@"****%@",responseObject);
+//        NSLog(@"****%@",responseObject);
         
         [SVProgressHUD dismiss];
         self.dataArray = [ZXKeShiListModel mj_objectArrayWithKeyValuesArray:responseObject[@"result"]];
@@ -127,6 +127,21 @@
     [self.tableView registerClass:[ZXKeShiListCell class] forCellReuseIdentifier:@"zhu"];
     [self.tableView reloadData];
     
+    
+    //创建tableHeader
+    
+    UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 38)];
+    headView.backgroundColor = [UIColor whiteColor];
+
+    UISegmentedControl *control = [[UISegmentedControl alloc] initWithItems:@[@"全部",@"新入院",@"危重"]];
+    control.frame = CGRectMake(30, 5, Screen_W - 60, headView.height - 10);
+    control.selectedSegmentIndex = 0;
+    control.tintColor = RGBACOLOR(76, 173, 73, 1.0);
+    [control addTarget:self action:@selector(choiceClick:) forControlEvents:UIControlEventValueChanged];
+    [headView addSubview:control];
+    self.tableView.tableHeaderView = headView;
+    
+    
     //下拉刷新
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewDate)];
     self.tableView.mj_header.automaticallyChangeAlpha = YES;
@@ -134,6 +149,23 @@
     
     //上拉加载
     self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreDate)];
+}
+
+-(void)choiceClick:(UISegmentedControl*)control{
+    
+    if (control.selectedSegmentIndex == 0) {
+        NSLog(@"00000000");
+    }
+    
+    if (control.selectedSegmentIndex == 1) {
+        NSLog(@"11111111");
+    }
+    
+    
+    if (control.selectedSegmentIndex == 2) {
+        NSLog(@"22222222");
+        
+    }
 }
 
 
@@ -159,8 +191,8 @@
     cell.selected = NO;
 
     ZXKeShiListModel *model = self.dataArray[indexPath.row];
-    NSLog(@"%@--%@--%@",model.doctorName,model.name,model.gender);
     ZXKeShiDetailController *vc = [[ZXKeShiDetailController alloc] init];
+    vc.model = model;
     [self.navigationController pushViewController:vc animated:YES];
     
 }

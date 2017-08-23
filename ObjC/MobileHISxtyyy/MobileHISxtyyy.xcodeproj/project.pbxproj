@@ -76,6 +76,13 @@
 		14F29AED1F25F77400ACE970 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14F29AEB1F25F77400ACE970 /* LaunchScreen.storyboard */; };
 		14F29AF81F25F77400ACE970 /* MobileHISxtyyyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F29AF71F25F77400ACE970 /* MobileHISxtyyyTests.m */; };
 		14F29B031F25F77400ACE970 /* MobileHISxtyyyUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F29B021F25F77400ACE970 /* MobileHISxtyyyUITests.m */; };
+		8A06A4D91F4D5D350055710E /* ZXRuYuanController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A06A4D81F4D5D350055710E /* ZXRuYuanController.m */; };
+		8A06A4DC1F4D5D6C0055710E /* ZXBingChengController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A06A4DB1F4D5D6C0055710E /* ZXBingChengController.m */; };
+		8A06A4DF1F4D5DBD0055710E /* ZXYiZhuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A06A4DE1F4D5DBD0055710E /* ZXYiZhuController.m */; };
+		8A06A4E21F4D5DDB0055710E /* ZXJianChaController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A06A4E11F4D5DDB0055710E /* ZXJianChaController.m */; };
+		8A06A4E51F4D5DF60055710E /* ZXFuJianController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A06A4E41F4D5DF60055710E /* ZXFuJianController.m */; };
+		8A06A4E81F4D74A10055710E /* ZXKeShidetaiView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A06A4E71F4D74A10055710E /* ZXKeShidetaiView.m */; };
+		8A06A4EB1F4D92810055710E /* ZXRuYuanCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A06A4EA1F4D92810055710E /* ZXRuYuanCell.m */; };
 		8A547C061F3AAE37000DF5CB /* JYJPersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A547BFF1F3AAE37000DF5CB /* JYJPersonViewController.m */; };
 		8A547C071F3AAE37000DF5CB /* JYJCommenItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A547C021F3AAE37000DF5CB /* JYJCommenItem.m */; };
 		8A547C081F3AAE37000DF5CB /* JYJProfileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A547C051F3AAE37000DF5CB /* JYJProfileCell.m */; };
@@ -242,6 +249,20 @@
 		14F29AFE1F25F77400ACE970 /* MobileHISxtyyyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MobileHISxtyyyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		14F29B021F25F77400ACE970 /* MobileHISxtyyyUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MobileHISxtyyyUITests.m; sourceTree = "<group>"; };
 		14F29B041F25F77400ACE970 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A06A4D71F4D5D350055710E /* ZXRuYuanController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXRuYuanController.h; sourceTree = "<group>"; };
+		8A06A4D81F4D5D350055710E /* ZXRuYuanController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXRuYuanController.m; sourceTree = "<group>"; };
+		8A06A4DA1F4D5D6C0055710E /* ZXBingChengController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXBingChengController.h; sourceTree = "<group>"; };
+		8A06A4DB1F4D5D6C0055710E /* ZXBingChengController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXBingChengController.m; sourceTree = "<group>"; };
+		8A06A4DD1F4D5DBD0055710E /* ZXYiZhuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXYiZhuController.h; sourceTree = "<group>"; };
+		8A06A4DE1F4D5DBD0055710E /* ZXYiZhuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXYiZhuController.m; sourceTree = "<group>"; };
+		8A06A4E01F4D5DDB0055710E /* ZXJianChaController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXJianChaController.h; sourceTree = "<group>"; };
+		8A06A4E11F4D5DDB0055710E /* ZXJianChaController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXJianChaController.m; sourceTree = "<group>"; };
+		8A06A4E31F4D5DF60055710E /* ZXFuJianController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXFuJianController.h; sourceTree = "<group>"; };
+		8A06A4E41F4D5DF60055710E /* ZXFuJianController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXFuJianController.m; sourceTree = "<group>"; };
+		8A06A4E61F4D74A10055710E /* ZXKeShidetaiView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXKeShidetaiView.h; sourceTree = "<group>"; };
+		8A06A4E71F4D74A10055710E /* ZXKeShidetaiView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXKeShidetaiView.m; sourceTree = "<group>"; };
+		8A06A4E91F4D92810055710E /* ZXRuYuanCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXRuYuanCell.h; sourceTree = "<group>"; };
+		8A06A4EA1F4D92810055710E /* ZXRuYuanCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXRuYuanCell.m; sourceTree = "<group>"; };
 		8A547BFE1F3AAE37000DF5CB /* JYJPersonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYJPersonViewController.h; sourceTree = "<group>"; };
 		8A547BFF1F3AAE37000DF5CB /* JYJPersonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYJPersonViewController.m; sourceTree = "<group>"; };
 		8A547C011F3AAE37000DF5CB /* JYJCommenItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYJCommenItem.h; sourceTree = "<group>"; };
@@ -449,6 +470,16 @@
 				148EE22C1F27224300A9F9A5 /* ZXKeShiSickController.m */,
 				1428E7021F29F0570086BD4E /* ZXKeShiDetailController.h */,
 				1428E7031F29F0570086BD4E /* ZXKeShiDetailController.m */,
+				8A06A4D71F4D5D350055710E /* ZXRuYuanController.h */,
+				8A06A4D81F4D5D350055710E /* ZXRuYuanController.m */,
+				8A06A4DA1F4D5D6C0055710E /* ZXBingChengController.h */,
+				8A06A4DB1F4D5D6C0055710E /* ZXBingChengController.m */,
+				8A06A4DD1F4D5DBD0055710E /* ZXYiZhuController.h */,
+				8A06A4DE1F4D5DBD0055710E /* ZXYiZhuController.m */,
+				8A06A4E01F4D5DDB0055710E /* ZXJianChaController.h */,
+				8A06A4E11F4D5DDB0055710E /* ZXJianChaController.m */,
+				8A06A4E31F4D5DF60055710E /* ZXFuJianController.h */,
+				8A06A4E41F4D5DF60055710E /* ZXFuJianController.m */,
 				148EE22E1F27225F00A9F9A5 /* ZXKeShiWeiJiController.h */,
 				148EE22F1F27225F00A9F9A5 /* ZXKeShiWeiJiController.m */,
 			);
@@ -473,6 +504,10 @@
 				1428E6B21F299D410086BD4E /* FKGPopOption.m */,
 				1428E6B71F29D41E0086BD4E /* ZXKeShiListCell.h */,
 				1428E6B81F29D41E0086BD4E /* ZXKeShiListCell.m */,
+				8A06A4E61F4D74A10055710E /* ZXKeShidetaiView.h */,
+				8A06A4E71F4D74A10055710E /* ZXKeShidetaiView.m */,
+				8A06A4E91F4D92810055710E /* ZXRuYuanCell.h */,
+				8A06A4EA1F4D92810055710E /* ZXRuYuanCell.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -934,6 +969,8 @@
 				1428E6F91F29D75A0086BD4E /* MJRefreshNormalHeader.m in Sources */,
 				143D92481F26D6F100499921 /* NSArray+Log.m in Sources */,
 				143D92981F26EF6D00499921 /* AFHTTPSessionManager.m in Sources */,
+				8A06A4EB1F4D92810055710E /* ZXRuYuanCell.m in Sources */,
+				8A06A4E81F4D74A10055710E /* ZXKeShidetaiView.m in Sources */,
 				8A547C071F3AAE37000DF5CB /* JYJCommenItem.m in Sources */,
 				145438121F28892300C57BD9 /* NSObject+MJProperty.m in Sources */,
 				1428E6F51F29D75A0086BD4E /* MJRefreshBackGifFooter.m in Sources */,
@@ -949,14 +986,17 @@
 				8A547C061F3AAE37000DF5CB /* JYJPersonViewController.m in Sources */,
 				145438131F28892300C57BD9 /* NSString+MJExtension.m in Sources */,
 				143D92331F26D4B300499921 /* HMTabbar.m in Sources */,
+				8A06A4E21F4D5DDB0055710E /* ZXJianChaController.m in Sources */,
 				1454381A1F28914100C57BD9 /* DLPickerView.m in Sources */,
 				1428E6F11F29D75A0086BD4E /* MJRefreshHeader.m in Sources */,
 				1454380D1F28892300C57BD9 /* MJPropertyKey.m in Sources */,
 				143D929B1F26EF6D00499921 /* AFURLRequestSerialization.m in Sources */,
 				143D929A1F26EF6D00499921 /* AFSecurityPolicy.m in Sources */,
+				8A06A4E51F4D5DF60055710E /* ZXFuJianController.m in Sources */,
 				1428E6F01F29D75A0086BD4E /* MJRefreshFooter.m in Sources */,
 				143D929D1F26EF6D00499921 /* AFURLSessionManager.m in Sources */,
 				1428E7011F29D75A0086BD4E /* README.md in Sources */,
+				8A06A4DF1F4D5DBD0055710E /* ZXYiZhuController.m in Sources */,
 				1454380C1F28892300C57BD9 /* MJProperty.m in Sources */,
 				1454380A1F28892300C57BD9 /* MJExtensionConst.m in Sources */,
 				143D923C1F26D62700499921 /* ZXCureController.m in Sources */,
@@ -994,8 +1034,10 @@
 				1428E6F41F29D75A0086BD4E /* MJRefreshAutoStateFooter.m in Sources */,
 				1454380F1F28892300C57BD9 /* NSObject+MJClass.m in Sources */,
 				1428E6FF1F29D75A0086BD4E /* UIScrollView+MJRefresh.m in Sources */,
+				8A06A4DC1F4D5D6C0055710E /* ZXBingChengController.m in Sources */,
 				143D929C1F26EF6D00499921 /* AFURLResponseSerialization.m in Sources */,
 				145438161F28896600C57BD9 /* ZXKeShiModel.m in Sources */,
+				8A06A4D91F4D5D350055710E /* ZXRuYuanController.m in Sources */,
 				148EE2301F27225F00A9F9A5 /* ZXKeShiWeiJiController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
