@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ZXJianChaController : UIViewController
-
+@property(nonatomic,copy) NSString *bianHaoID;
 @end

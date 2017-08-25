@@ -185,6 +185,7 @@
     [self addChildViewController:w4];
     
     ZXJianChaController *w5 = [[ZXJianChaController alloc]init];
+    w5.bianHaoID = self.model.hospitalId;
     [self addChildViewController:w5];
     
     ZXFuJianController *w6 = [[ZXFuJianController alloc]init];

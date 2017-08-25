@@ -91,6 +91,8 @@
 		8A547C121F3AB97B000DF5CB /* testController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A547C111F3AB97B000DF5CB /* testController.m */; };
 		8AB4ACDD1F4E765F0053352F /* ZXBingChengCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AB4ACDC1F4E765F0053352F /* ZXBingChengCell.m */; };
 		8AB4ACE01F4E7AD80053352F /* ZXBingChengModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AB4ACDF1F4E7AD80053352F /* ZXBingChengModel.m */; };
+		8ADCC4361F4FB28C00C8DF37 /* ZXYiZhuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ADCC4351F4FB28C00C8DF37 /* ZXYiZhuCell.m */; };
+		8ADCC4391F4FB5DD00C8DF37 /* ZXYiZhuModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ADCC4381F4FB5DD00C8DF37 /* ZXYiZhuModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -281,6 +283,10 @@
 		8AB4ACDC1F4E765F0053352F /* ZXBingChengCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXBingChengCell.m; sourceTree = "<group>"; };
 		8AB4ACDE1F4E7AD80053352F /* ZXBingChengModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXBingChengModel.h; sourceTree = "<group>"; };
 		8AB4ACDF1F4E7AD80053352F /* ZXBingChengModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXBingChengModel.m; sourceTree = "<group>"; };
+		8ADCC4341F4FB28C00C8DF37 /* ZXYiZhuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXYiZhuCell.h; sourceTree = "<group>"; };
+		8ADCC4351F4FB28C00C8DF37 /* ZXYiZhuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXYiZhuCell.m; sourceTree = "<group>"; };
+		8ADCC4371F4FB5DD00C8DF37 /* ZXYiZhuModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXYiZhuModel.h; sourceTree = "<group>"; };
+		8ADCC4381F4FB5DD00C8DF37 /* ZXYiZhuModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXYiZhuModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -501,6 +507,8 @@
 				1428E6B51F29CCF90086BD4E /* ZXKeShiListModel.m */,
 				8AB4ACDE1F4E7AD80053352F /* ZXBingChengModel.h */,
 				8AB4ACDF1F4E7AD80053352F /* ZXBingChengModel.m */,
+				8ADCC4371F4FB5DD00C8DF37 /* ZXYiZhuModel.h */,
+				8ADCC4381F4FB5DD00C8DF37 /* ZXYiZhuModel.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -518,6 +526,8 @@
 				8A06A4EA1F4D92810055710E /* ZXRuYuanCell.m */,
 				8AB4ACDB1F4E765F0053352F /* ZXBingChengCell.h */,
 				8AB4ACDC1F4E765F0053352F /* ZXBingChengCell.m */,
+				8ADCC4341F4FB28C00C8DF37 /* ZXYiZhuCell.h */,
+				8ADCC4351F4FB28C00C8DF37 /* ZXYiZhuCell.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -987,6 +997,7 @@
 				1454380E1F28892300C57BD9 /* MJPropertyType.m in Sources */,
 				143D92991F26EF6D00499921 /* AFNetworkReachabilityManager.m in Sources */,
 				1428E6F61F29D75A0086BD4E /* MJRefreshBackNormalFooter.m in Sources */,
+				8ADCC4391F4FB5DD00C8DF37 /* ZXYiZhuModel.m in Sources */,
 				143D92751F26EF2000499921 /* SVRadialGradientLayer.m in Sources */,
 				1428E7041F29F0570086BD4E /* ZXKeShiDetailController.m in Sources */,
 				8A547C0C1F3AAF3E000DF5CB /* JYJSliderMenuTool.m in Sources */,
@@ -1027,6 +1038,7 @@
 				8A547C0F1F3AAF73000DF5CB /* JYJAnimateViewController.m in Sources */,
 				8AB4ACE01F4E7AD80053352F /* ZXBingChengModel.m in Sources */,
 				143D92301F26D49A00499921 /* HMTabbarController.m in Sources */,
+				8ADCC4361F4FB28C00C8DF37 /* ZXYiZhuCell.m in Sources */,
 				1428E6F31F29D75A0086BD4E /* MJRefreshAutoNormalFooter.m in Sources */,
 				143D924A1F26D6F100499921 /* UIBarButtonItem+item.m in Sources */,
 				1428E6EF1F29D75A0086BD4E /* MJRefreshComponent.m in Sources */,

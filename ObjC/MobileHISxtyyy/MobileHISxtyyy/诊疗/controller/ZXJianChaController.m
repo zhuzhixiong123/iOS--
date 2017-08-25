@@ -16,15 +16,47 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor blueColor];
-    [self loadBody];
+    self.view.backgroundColor = [UIColor whiteColor];
+    [self loadData];
 }
 
 
--(void)loadBody{
+-(void)loadData{
     
+    AFHTTPSessionManager *maneger = [AFHTTPSessionManager manager];
+    
+    NSString *tempString = @"2014-03-01%2011:14:00";
+    NSString *string = [NSString stringWithFormat:@"http://222.243.168.34:1111/Dev_MobileHIS/patient/%@/examResult/%@/page/0/pageSize/10",self.bianHaoID,tempString];
+    
+    NSString *headers = [[NSString alloc] getHttpHeadParts];
+    [maneger.requestSerializer setValue:[NSString stringWithFormat:@"Basic %@", headers] forHTTPHeaderField:@"Authorization"];
+    [SVProgressHUD showWithStatus:@"加载数据..."];
+    
+    [maneger GET:string parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"%@",responseObject);
+        [SVProgressHUD dismiss];
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"%@",error);
+    }];
     
 }
 
 
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

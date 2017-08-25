@@ -151,7 +151,6 @@
     self.bedNo.frame = CGRectMake(CGRectGetMaxX(self.bed.frame) + 8, 10, 66, 16);
     self.doc.frame = CGRectMake(Screen_W * 0.5, 10, 52, 16);
     self.docName.frame = CGRectMake(CGRectGetMaxX(self.doc.frame) + 10, 10, 52, 16);
-    
     self.sex.frame = CGRectMake(13, CGRectGetMaxY(self.disName.frame) + 5, 25, 16);
     self.sexValue.frame = CGRectMake(CGRectGetMaxX(self.sex.frame) + 8 ,self.sex.size_y, 21, 16);
     self.zhuYuan.frame = CGRectMake(Screen_W * 0.5,self.sex.size_y, 48, 16);
@@ -161,7 +160,6 @@
     self.ruYuan.frame = CGRectMake(Screen_W * 0.5,self.age.size_y, 48, 16);
     self.ruYuanData.frame = CGRectMake(CGRectGetMaxX(self.ruYuan.frame) + 13,self.ruYuan.size_y, 100, 16);
     self.disease.frame = CGRectMake(13,CGRectGetMaxY(self.age.frame), 48, 16);
-    
     self.diseaseName.frame = CGRectMake(CGRectGetMaxX(self.disease.frame) + 13,self.disease.size_y, 200, 16);
     
 }

@@ -63,6 +63,17 @@
 }
 
 
+-(CGFloat)widthWithText:(NSString *)text andFont:(NSInteger)font andHight:(CGFloat) height{
+
+    NSDictionary *dict = @{NSFontAttributeName : [UIFont systemFontOfSize:font]};
+    CGSize maxSize = CGSizeMake(MAXFLOAT, height);
+
+    CGSize text_size = [text boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:dict context:nil].size;
+    return text_size.width;
+}
+
+
+
 -(NSString *)timeWithDateString:(NSString *)dateString{
     
     double dates = [dateString doubleValue];
@@ -96,52 +107,9 @@
 
 
 
--(NSString *)weekWithDateString:(NSString *)dateString{
-    double dates = [dateString doubleValue];
-    
-    NSDate *date = [NSDate dateWithTimeIntervalSince1970:dates];
-    
-    NSDateFormatter *format = [[NSDateFormatter alloc] init];
-    
-    format.dateFormat = @"EEEE";
-    
-    NSString *string = [format stringFromDate:date];
-    
-    return string;
-}
 
 
 
--(NSString *)dateWithDateString:(NSString *)dateString{
-
-    double dates = [dateString doubleValue] /1000;
-    
-    NSDate *date = [NSDate dateWithTimeIntervalSince1970:dates];
-    
-    NSDateFormatter *format = [[NSDateFormatter alloc] init];
-    
-    format.dateFormat = @"yyyy.MM.dd";
-    
-    NSString *string = [format stringFromDate:date];
-    
-    return string;
-
-}
-
--(NSString *)monthWithDateString:(NSString *)dateString{
-    double dates = [dateString doubleValue] /1000;
-    
-    NSDate *date = [NSDate dateWithTimeIntervalSince1970:dates];
-    
-    NSDateFormatter *format = [[NSDateFormatter alloc] init];
-    
-    format.dateFormat = @"MM.dd";
-    
-    NSString *string = [format stringFromDate:date];
-    
-    return string;
-
-}
 
 - (NSString *)getDate:(NSString *)date
 {
@@ -232,20 +200,6 @@
     NSString *currentDateStr = [dateFormatter stringFromDate:mydate];
 
     return currentDateStr;
-}
-
--(NSString *) allDataWithDateString:(NSString *)dateString{
-    double dates = [dateString doubleValue];
-    
-    NSDate *date = [NSDate dateWithTimeIntervalSince1970:dates];
-    
-    NSDateFormatter *format = [[NSDateFormatter alloc] init];
-    
-    format.dateFormat = @"yyyy.MM.dd EEEE HH:mm";
-    
-    NSString *string = [format stringFromDate:date];
-    
-    return string;
 }
 
 

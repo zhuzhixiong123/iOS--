@@ -35,6 +35,7 @@
         UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
         tableView.dataSource = self;
         tableView.delegate = self;
+        tableView.contentInset = UIEdgeInsetsMake(0, 0, 64 + 120 + 44, 0);
         [self.view addSubview:tableView];
         _tableView = tableView;
     }
@@ -55,12 +56,16 @@
     [self.tableView registerClass:[ZXBingChengCell class] forCellReuseIdentifier:@"zhu"];
     self.tableView.tableFooterView = [[UIView alloc] init];
     
-    
+    //下拉刷新
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewDate)];
     
 }
 
--(void)loadData{
+-(void)loadNewDate{
+    [self.tableView.mj_header endRefreshing];
+}
 
+-(void)loadData{
     AFHTTPSessionManager *maneger = [AFHTTPSessionManager manager];
     NSString *tempString = @"2014-06-10%2008:20:00";
     
@@ -84,7 +89,6 @@
         }
        
         self.dataArray = [ZXBingChengModel mj_objectArrayWithKeyValuesArray:arrM];
-
         [self.tableView reloadData];
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {

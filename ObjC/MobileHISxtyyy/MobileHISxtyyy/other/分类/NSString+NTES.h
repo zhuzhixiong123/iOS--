@@ -19,16 +19,14 @@
 -(NSString*)getHttpHeadParts;
 
 
+//获取文字的尺寸
+-(CGFloat)widthWithText:(NSString *)text andFont:(NSInteger)font andHight:(CGFloat) height;
+
+
+
 //NSDate转化成字符串
 -(NSString *) timeWithDateString:(NSString *)dateString;
 
-//NSDate转化成字符串
--(NSString *) weekWithDateString:(NSString *)dateString;
-
-//NSDate转化成字符串
--(NSString *) dateWithDateString:(NSString *)dateString;
-
--(NSString *) monthWithDateString:(NSString *)dateString;
 
 //根据时间判断状态
 -(NSString *)compareEndTime:(NSString *)endTime;
@@ -38,7 +36,6 @@
 
 //将几年几月几号转时间戳
 -(NSString *)getDate:(NSString *)date;
-
 
 //得到当前时间
 - (NSDate *)getCurrentTime;

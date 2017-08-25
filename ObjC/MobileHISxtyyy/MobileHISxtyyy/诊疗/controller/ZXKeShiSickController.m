@@ -107,10 +107,8 @@
     [maneger.requestSerializer setValue:[NSString stringWithFormat:@"Basic %@", headers] forHTTPHeaderField:@"Authorization"];
     
     [SVProgressHUD showWithStatus:@"数据加载..."];
-    
+  
     [maneger GET:urlString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        
-//        NSLog(@"****%@",responseObject);
         
         [SVProgressHUD dismiss];
         self.dataArray = [ZXKeShiListModel mj_objectArrayWithKeyValuesArray:responseObject[@"result"]];
@@ -118,8 +116,8 @@
         [self initTableview];
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"%@",error);
          [SVProgressHUD dismiss];
+         [SVProgressHUD showErrorWithStatus:@"请检查网络"];
     }];
 }
 
@@ -164,7 +162,6 @@
     
     if (control.selectedSegmentIndex == 2) {
         NSLog(@"22222222");
-        
     }
 }
 
