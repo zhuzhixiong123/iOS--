@@ -107,7 +107,16 @@
 
 }
 
-
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    // 1 松开手选中颜色消失
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+    // 3点击没有颜色改变
+    cell.selected = NO;
+    
+}
 
 
 

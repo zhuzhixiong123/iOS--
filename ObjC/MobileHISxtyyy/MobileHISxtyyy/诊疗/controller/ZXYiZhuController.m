@@ -10,6 +10,8 @@
 #import "ZXYiZhuModel.h"
 #import "ZXYiZhuCell.h"
 
+#import "ZXYIZhuDetailController.h"
+
 @interface ZXYiZhuController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property(nonatomic,weak) UITableView *tableView;
@@ -162,7 +164,7 @@
     
     [maneger GET:string parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [SVProgressHUD dismiss];
-
+        NSLog(@"++++++++%@",responseObject);
         NSArray *array = responseObject[@"result"];
         NSMutableArray *arrM  = [NSMutableArray array];
         for (NSArray *tempArr in array) {
@@ -191,6 +193,29 @@
     cell.model = self.dataArray[indexPath.row];
     return cell;
 
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    // 1 松开手选中颜色消失
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+    // 3点击没有颜色改变
+    cell.selected = NO;
+    
+    
+    ZXYiZhuModel *model = self.dataArray[indexPath.row];
+    NSLog(@"标题是:  %@",model.title);
+    
+    ZXYIZhuDetailController *detailVc  =[[ZXYIZhuDetailController alloc] init];
+    detailVc.model = model;
+    [self.navigationController pushViewController:detailVc animated:YES];
+    
+    
+    
+    
+    
 }
 
 @end

@@ -93,6 +93,10 @@
 		8AB4ACE01F4E7AD80053352F /* ZXBingChengModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AB4ACDF1F4E7AD80053352F /* ZXBingChengModel.m */; };
 		8ADCC4361F4FB28C00C8DF37 /* ZXYiZhuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ADCC4351F4FB28C00C8DF37 /* ZXYiZhuCell.m */; };
 		8ADCC4391F4FB5DD00C8DF37 /* ZXYiZhuModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ADCC4381F4FB5DD00C8DF37 /* ZXYiZhuModel.m */; };
+		8ADCC43C1F4FFCA100C8DF37 /* ZXJianChaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ADCC43B1F4FFCA100C8DF37 /* ZXJianChaModel.m */; };
+		8ADCC43F1F4FFD3600C8DF37 /* ZXJianChaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ADCC43E1F4FFD3600C8DF37 /* ZXJianChaCell.m */; };
+		8ADCC4421F50103200C8DF37 /* ZXYIZhuDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ADCC4411F50103200C8DF37 /* ZXYIZhuDetailController.m */; };
+		8ADCC4451F50143800C8DF37 /* ZXYIZhuDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ADCC4441F50143800C8DF37 /* ZXYIZhuDetailCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -287,6 +291,14 @@
 		8ADCC4351F4FB28C00C8DF37 /* ZXYiZhuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXYiZhuCell.m; sourceTree = "<group>"; };
 		8ADCC4371F4FB5DD00C8DF37 /* ZXYiZhuModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXYiZhuModel.h; sourceTree = "<group>"; };
 		8ADCC4381F4FB5DD00C8DF37 /* ZXYiZhuModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXYiZhuModel.m; sourceTree = "<group>"; };
+		8ADCC43A1F4FFCA100C8DF37 /* ZXJianChaModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXJianChaModel.h; sourceTree = "<group>"; };
+		8ADCC43B1F4FFCA100C8DF37 /* ZXJianChaModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXJianChaModel.m; sourceTree = "<group>"; };
+		8ADCC43D1F4FFD3600C8DF37 /* ZXJianChaCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXJianChaCell.h; sourceTree = "<group>"; };
+		8ADCC43E1F4FFD3600C8DF37 /* ZXJianChaCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXJianChaCell.m; sourceTree = "<group>"; };
+		8ADCC4401F50103200C8DF37 /* ZXYIZhuDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXYIZhuDetailController.h; sourceTree = "<group>"; };
+		8ADCC4411F50103200C8DF37 /* ZXYIZhuDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXYIZhuDetailController.m; sourceTree = "<group>"; };
+		8ADCC4431F50143800C8DF37 /* ZXYIZhuDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXYIZhuDetailCell.h; sourceTree = "<group>"; };
+		8ADCC4441F50143800C8DF37 /* ZXYIZhuDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXYIZhuDetailCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -488,6 +500,8 @@
 				8A06A4DB1F4D5D6C0055710E /* ZXBingChengController.m */,
 				8A06A4DD1F4D5DBD0055710E /* ZXYiZhuController.h */,
 				8A06A4DE1F4D5DBD0055710E /* ZXYiZhuController.m */,
+				8ADCC4401F50103200C8DF37 /* ZXYIZhuDetailController.h */,
+				8ADCC4411F50103200C8DF37 /* ZXYIZhuDetailController.m */,
 				8A06A4E01F4D5DDB0055710E /* ZXJianChaController.h */,
 				8A06A4E11F4D5DDB0055710E /* ZXJianChaController.m */,
 				8A06A4E31F4D5DF60055710E /* ZXFuJianController.h */,
@@ -509,6 +523,8 @@
 				8AB4ACDF1F4E7AD80053352F /* ZXBingChengModel.m */,
 				8ADCC4371F4FB5DD00C8DF37 /* ZXYiZhuModel.h */,
 				8ADCC4381F4FB5DD00C8DF37 /* ZXYiZhuModel.m */,
+				8ADCC43A1F4FFCA100C8DF37 /* ZXJianChaModel.h */,
+				8ADCC43B1F4FFCA100C8DF37 /* ZXJianChaModel.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -528,6 +544,10 @@
 				8AB4ACDC1F4E765F0053352F /* ZXBingChengCell.m */,
 				8ADCC4341F4FB28C00C8DF37 /* ZXYiZhuCell.h */,
 				8ADCC4351F4FB28C00C8DF37 /* ZXYiZhuCell.m */,
+				8ADCC43D1F4FFD3600C8DF37 /* ZXJianChaCell.h */,
+				8ADCC43E1F4FFD3600C8DF37 /* ZXJianChaCell.m */,
+				8ADCC4431F50143800C8DF37 /* ZXYIZhuDetailCell.h */,
+				8ADCC4441F50143800C8DF37 /* ZXYIZhuDetailCell.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -1022,6 +1042,7 @@
 				1454380C1F28892300C57BD9 /* MJProperty.m in Sources */,
 				1454380A1F28892300C57BD9 /* MJExtensionConst.m in Sources */,
 				143D923C1F26D62700499921 /* ZXCureController.m in Sources */,
+				8ADCC4451F50143800C8DF37 /* ZXYIZhuDetailCell.m in Sources */,
 				1428E6FC1F29D75A0086BD4E /* MJRefreshConst.m in Sources */,
 				1428E6B31F299D410086BD4E /* FKGPopOption.m in Sources */,
 				143D92741F26EF2000499921 /* SVProgressHUD.m in Sources */,
@@ -1034,9 +1055,11 @@
 				1428E6F71F29D75A0086BD4E /* MJRefreshBackStateFooter.m in Sources */,
 				143D924B1F26D6F100499921 /* UIImage+image.m in Sources */,
 				1454380B1F28892300C57BD9 /* MJFoundation.m in Sources */,
+				8ADCC43F1F4FFD3600C8DF37 /* ZXJianChaCell.m in Sources */,
 				8A547C121F3AB97B000DF5CB /* testController.m in Sources */,
 				8A547C0F1F3AAF73000DF5CB /* JYJAnimateViewController.m in Sources */,
 				8AB4ACE01F4E7AD80053352F /* ZXBingChengModel.m in Sources */,
+				8ADCC4421F50103200C8DF37 /* ZXYIZhuDetailController.m in Sources */,
 				143D92301F26D49A00499921 /* HMTabbarController.m in Sources */,
 				8ADCC4361F4FB28C00C8DF37 /* ZXYiZhuCell.m in Sources */,
 				1428E6F31F29D75A0086BD4E /* MJRefreshAutoNormalFooter.m in Sources */,
@@ -1044,6 +1067,7 @@
 				1428E6EF1F29D75A0086BD4E /* MJRefreshComponent.m in Sources */,
 				14F29AE21F25F77400ACE970 /* AppDelegate.m in Sources */,
 				1428E6B91F29D41E0086BD4E /* ZXKeShiListCell.m in Sources */,
+				8ADCC43C1F4FFCA100C8DF37 /* ZXJianChaModel.m in Sources */,
 				1428E6F21F29D75A0086BD4E /* MJRefreshAutoGifFooter.m in Sources */,
 				143D92391F26D59800499921 /* ZXDiscussController.m in Sources */,
 				145438111F28892300C57BD9 /* NSObject+MJKeyValue.m in Sources */,

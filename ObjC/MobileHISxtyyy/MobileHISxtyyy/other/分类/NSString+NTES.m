@@ -72,6 +72,15 @@
     return text_size.width;
 }
 
+//获取文字的高度
+-(CGFloat)heightWithText:(NSString *)text andFont:(NSInteger)font andWidth:(CGFloat) Width{
+    NSDictionary *dict = @{NSFontAttributeName : [UIFont systemFontOfSize:font]};
+    CGSize maxSize = CGSizeMake(Width, MAXFLOAT);
+    
+    CGSize text_size = [text boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:dict context:nil].size;
+    return text_size.height;
+
+}
 
 
 -(NSString *)timeWithDateString:(NSString *)dateString{

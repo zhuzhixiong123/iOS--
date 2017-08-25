@@ -56,6 +56,20 @@
     [self.tableView registerClass:[ZXBingChengCell class] forCellReuseIdentifier:@"zhu"];
     self.tableView.tableFooterView = [[UIView alloc] init];
     
+    UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 32)];
+    headView.backgroundColor = RGBACOLOR(230, 230, 230, 1.0);
+    
+    UILabel *lable = [[UILabel alloc] initWithFrame:CGRectMake(12, 9, 200, 16)];
+    lable.text = @"首次病程记录";
+    lable.font = [UIFont systemFontOfSize:13];
+    [headView addSubview:lable];
+    
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(Screen_W - 26, (headView.height - 14) * 0.5, 14, 14)];
+    imageView.image = [UIImage imageNamed:@"caret_right"];
+    [headView addSubview:imageView];
+    
+    self.tableView.tableHeaderView = headView;
+    
     //下拉刷新
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewDate)];
     
@@ -127,10 +141,15 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-
+    // 1 松开手选中颜色消失
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+    // 3点击没有颜色改变
+    cell.selected = NO;
+    
     ZXBingChengModel *model = self.dataArray[indexPath.row];
     model.isShowMoreText = !model.isShowMoreText;
-    
     [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 

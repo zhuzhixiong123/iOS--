@@ -19,9 +19,11 @@
 -(NSString*)getHttpHeadParts;
 
 
-//获取文字的尺寸
+//获取文字的长度
 -(CGFloat)widthWithText:(NSString *)text andFont:(NSInteger)font andHight:(CGFloat) height;
 
+//获取文字的高度
+-(CGFloat)heightWithText:(NSString *)text andFont:(NSInteger)font andWidth:(CGFloat) Width;
 
 
 //NSDate转化成字符串
