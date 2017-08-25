@@ -117,7 +117,6 @@
     self.scrollview = scrollview;
     scrollview.pagingEnabled = YES;
     scrollview.bounces = NO;
-    scrollview.backgroundColor = [UIColor lightGrayColor];
     [self.view addSubview:scrollview];
     scrollview.contentSize = CGSizeMake(Screen_W * 5, 0);
     
@@ -137,7 +136,7 @@
 -(void)btnChangeColor:(UIButton*)btn{
     _clickedBtn.transform = CGAffineTransformIdentity;
     [_clickedBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [btn setTitleColor:mainColor forState:UIControlStateNormal];
     btn.transform = CGAffineTransformMakeScale(1.2, 1.2);
     _clickedBtn = btn;
     
@@ -178,9 +177,11 @@
     [self addChildViewController:q1];
     
     ZXBingChengController *w3 = [[ZXBingChengController alloc]init];
+    w3.bianHaoID = self.model.hospitalId;
     [self addChildViewController:w3];
     
     ZXYiZhuController *w4 = [[ZXYiZhuController alloc]init];
+    w4.bianHaoID = self.model.hospitalId;
     [self addChildViewController:w4];
     
     ZXJianChaController *w5 = [[ZXJianChaController alloc]init];

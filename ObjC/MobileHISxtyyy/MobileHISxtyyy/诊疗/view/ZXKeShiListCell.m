@@ -46,7 +46,7 @@
         bed.text = @"床";
         [bed setTextAlignment:NSTextAlignmentCenter];
         [bed setTextColor:[UIColor whiteColor]];
-        bed.backgroundColor = RGBACOLOR(76, 173, 73, 1.0);
+        bed.backgroundColor = mainColor;
         [bed setFont:[UIFont systemFontOfSize:12]];
         bed.layer.cornerRadius = 3;
         bed.layer.masksToBounds = YES;
@@ -64,7 +64,7 @@
         doc.text = @"主管医生";
         [doc setTextAlignment:NSTextAlignmentCenter];
         [doc setTextColor:[UIColor whiteColor]];
-        doc.backgroundColor = RGBACOLOR(76, 173, 73, 1.0);
+        doc.backgroundColor = mainColor;
         [doc setFont:[UIFont systemFontOfSize:12]];
         doc.layer.cornerRadius = 3;
         doc.layer.masksToBounds = YES;

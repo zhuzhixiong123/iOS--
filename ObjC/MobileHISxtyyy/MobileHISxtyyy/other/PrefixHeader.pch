@@ -28,5 +28,5 @@
 #define iPhone6Plus     [UIScreen mainScreen].bounds.size.height == 736
 
 #define RGBACOLOR(r,g,b,a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]
-
+#define mainColor  RGBACOLOR(76, 173, 73, 1.0) 
 #define HMColor RGBACOLOR(247,247,247,1.0f)

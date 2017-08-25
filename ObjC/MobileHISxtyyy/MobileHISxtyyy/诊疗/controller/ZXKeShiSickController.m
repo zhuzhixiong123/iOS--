@@ -136,7 +136,7 @@
     UISegmentedControl *control = [[UISegmentedControl alloc] initWithItems:@[@"全部",@"新入院",@"危重"]];
     control.frame = CGRectMake(30, 5, Screen_W - 60, headView.height - 10);
     control.selectedSegmentIndex = 0;
-    control.tintColor = RGBACOLOR(76, 173, 73, 1.0);
+    control.tintColor = mainColor;
     [control addTarget:self action:@selector(choiceClick:) forControlEvents:UIControlEventValueChanged];
     [headView addSubview:control];
     self.tableView.tableHeaderView = headView;

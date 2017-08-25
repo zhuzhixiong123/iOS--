@@ -10,6 +10,7 @@
 
 @interface ZXRuYuanCell : UITableViewCell
 
+
 @property(nonatomic,weak) UILabel *titles;
 @property(nonatomic,weak) UILabel *contLable;
 

@@ -24,6 +24,7 @@
         UILabel *contLable = [[UILabel alloc] init];
         contLable.font = [UIFont systemFontOfSize:14];
         self.contLable = contLable;
+        contLable.numberOfLines = 0;
         [self.contentView addSubview:contLable];
     }
     return self;
@@ -32,8 +33,12 @@
 -(void)layoutSubviews{
     [super layoutSubviews];
     
-
+    self.titles.frame = CGRectMake(12, 8, Screen_W - 24, 18);
+    self.contLable.frame = CGRectMake(12, CGRectGetMaxY(self.titles.frame)+2, Screen_W - 24, self.height - 38);
 }
+
+
+
 
 
 @end

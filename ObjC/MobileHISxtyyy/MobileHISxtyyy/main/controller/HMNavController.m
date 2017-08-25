@@ -27,7 +27,7 @@
 //    [bar setBackgroundImage:[UIImage imageNamed:@"home_navigation_bar"] forBarMetrics:UIBarMetricsDefault];
 //    [bar setTranslucent:YES];
     
-    bar.barTintColor = RGBACOLOR(76, 173, 73, 1.0);
+    bar.barTintColor = mainColor;
     bar.barStyle = UIBarStyleBlack;
 
 
