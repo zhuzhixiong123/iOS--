@@ -87,8 +87,8 @@
             return ;
         }
         NSArray *arrM = [ZXJianChaModel mj_objectArrayWithKeyValuesArray:responseObject[@"result"]];
-        
         [self.dataArray addObjectsFromArray:arrM];
+        
         [self.tableView reloadData];
         [self.tableView.mj_footer endRefreshing];
         

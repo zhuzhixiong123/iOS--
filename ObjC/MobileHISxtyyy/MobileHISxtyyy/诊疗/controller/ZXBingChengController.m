@@ -8,8 +8,8 @@
 
 #import "ZXBingChengController.h"
 #import "ZXBingChengCell.h"
-
 #import "ZXBingChengModel.h"
+#import "ZXFirstBCController.h"
 
 @interface ZXBingChengController ()<UITableViewDelegate,UITableViewDataSource,ZXBingChengCellDelegate>
 
@@ -49,14 +49,15 @@
     [self loadData];
     
     [self initTableView];
-    
 }
 
 -(void)initTableView{
     [self.tableView registerClass:[ZXBingChengCell class] forCellReuseIdentifier:@"zhu"];
     self.tableView.tableFooterView = [[UIView alloc] init];
     
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapClick)];
     UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 32)];
+    [headView addGestureRecognizer:tap];
     headView.backgroundColor = RGBACOLOR(230, 230, 230, 1.0);
     
     UILabel *lable = [[UILabel alloc] initWithFrame:CGRectMake(12, 9, 200, 16)];
@@ -69,9 +70,15 @@
     [headView addSubview:imageView];
     
     self.tableView.tableHeaderView = headView;
-    
     //下拉刷新
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewDate)];
+}
+
+-(void)tapClick{
+    NSLog(@"zhu");
+    ZXFirstBCController *vc = [[ZXFirstBCController alloc] init];
+    vc.bianHaoID = self.bianHaoID;
+    [self.navigationController pushViewController:vc animated:YES];
     
 }
 

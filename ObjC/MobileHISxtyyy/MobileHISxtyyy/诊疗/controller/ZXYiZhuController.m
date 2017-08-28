@@ -15,9 +15,11 @@
 @interface ZXYiZhuController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property(nonatomic,weak) UITableView *tableView;
-@property(nonatomic,strong) NSMutableArray *dataArray;
 
-//@property(nonatomic,assign) ;;
+@property(nonatomic,copy) NSMutableArray *dataArray;
+
+@property(nonatomic,strong) NSArray *inner;
+@property(nonatomic,strong) NSMutableArray *outer;
 
 @end
 
@@ -27,8 +29,9 @@
     NSInteger _page;
     //用于切换短期和长期
     NSString *_timeString;
+    
+//    NSMutableArray *_dataArray;
 }
-
 
 -(NSMutableArray *)dataArray{
     if (_dataArray == nil) {
@@ -49,8 +52,6 @@
     }
     return _tableView;
 }
-
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -85,8 +86,6 @@
     
     //下拉刷新
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewDate)];
-    
-    
 }
 
 -(void)loadNewDate{
@@ -95,7 +94,6 @@
 }
 
 -(void)loadMoreDate{
-    
     _page += 1;
     
     AFHTTPSessionManager *maneger = [AFHTTPSessionManager manager];
@@ -105,7 +103,6 @@
     
     [maneger.requestSerializer setValue:[NSString stringWithFormat:@"Basic %@", headers] forHTTPHeaderField:@"Authorization"];
     [maneger GET:urlString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        
         NSLog(@"****%@---%ld",responseObject[@"totalPages"],_page);
         
         if ( [responseObject[@"totalPages"] integerValue] <= _page) {
@@ -115,15 +112,16 @@
         }
         
         NSArray *array = responseObject[@"result"];
-        NSMutableArray *arrM  = [NSMutableArray array];
-        for (NSArray *tempArr in array) {
+        NSMutableArray *arrM = [NSMutableArray array];
+        for (NSArray *arrtemp in array) {
             
-            for (NSDictionary *dict in tempArr) {
+            for (NSDictionary *dict in arrtemp) {
                 ZXYiZhuModel *model = [ZXYiZhuModel mj_objectWithKeyValues:dict];
                 [arrM addObject:model];
-            }
         }
-  
+            
+        }
+            
         [self.dataArray addObjectsFromArray:arrM];
         [self.tableView reloadData];
         [self.tableView.mj_footer endRefreshing];
@@ -131,7 +129,6 @@
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"%@",error);
     }];
-    
 }
 
 
@@ -153,9 +150,7 @@
 }
 
 -(void)loadData{
-    
     AFHTTPSessionManager *maneger = [AFHTTPSessionManager manager];
-
     NSString *string = [NSString stringWithFormat:@"http://222.243.168.34:1111/Dev_MobileHIS/patient/%@/%@/page/0/pageSize/10",self.bianHaoID,_timeString];
     
     NSString *headers = [[NSString alloc] getHttpHeadParts];
@@ -164,39 +159,41 @@
     
     [maneger GET:string parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [SVProgressHUD dismiss];
-        NSLog(@"++++++++%@",responseObject);
         NSArray *array = responseObject[@"result"];
-        NSMutableArray *arrM  = [NSMutableArray array];
-        for (NSArray *tempArr in array) {
-            
-            for (NSDictionary *dict in tempArr) {
+        NSLog(@"*****%@",array);
+        NSMutableArray *arrM = [NSMutableArray array];
+        
+        for (NSArray *arr in array) {
+            for (NSDictionary *dict in arr) {
                 ZXYiZhuModel *model = [ZXYiZhuModel mj_objectWithKeyValues:dict];
                 [arrM addObject:model];
+                
             }
         }
-        self.dataArray = arrM;
-        
+        _dataArray = arrM;
+
         [self.tableView reloadData];
-        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"%@",error);
+        
     }];
-    
 }
+
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.dataArray.count;
 
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+
+
     ZXYiZhuCell *cell = [tableView dequeueReusableCellWithIdentifier:@"zhu" forIndexPath:indexPath];
     cell.model = self.dataArray[indexPath.row];
     return cell;
-
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
     // 1 松开手选中颜色消失
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
@@ -204,18 +201,23 @@
     // 3点击没有颜色改变
     cell.selected = NO;
     
-    
     ZXYiZhuModel *model = self.dataArray[indexPath.row];
     NSLog(@"标题是:  %@",model.title);
     
     ZXYIZhuDetailController *detailVc  =[[ZXYIZhuDetailController alloc] init];
     detailVc.model = model;
     [self.navigationController pushViewController:detailVc animated:YES];
-    
-    
-    
-    
-    
 }
+
+
+//-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+//    return 10;
+//
+//}
+//
+//-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+//
+//    return 0.01;
+//}
 
 @end

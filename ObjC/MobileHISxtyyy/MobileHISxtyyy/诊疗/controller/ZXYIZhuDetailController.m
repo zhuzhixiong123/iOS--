@@ -23,13 +23,13 @@
 
 -(NSArray *)contArray{
     if (_contArray == nil) {
-        _contArray = @[self.model.title,self.model.startTime,self.model.dose,self.model.quantity,self.model.unitPrice,self.model.submittedBy,self.model.executedDepartment,@""];
+        _contArray = @[self.model.startTime,@"",@"",self.model.quantity,self.model.unitPrice,@"",self.model.executedDepartment,@"",@"",self.model.submittedBy,@""];
     }
     return _contArray;
 }
 -(NSArray *)dataArray{
     if (_dataArray == nil) {
-         _dataArray = @[@"医嘱项目",@"开始时间",@"结束时间",@"样本类型",@"剂量",@"数量",@"频次",@"ww"];
+         _dataArray = @[@"医嘱项目",@"开始时间",@"结束时间",@"样本类型",@"剂量",@"数量",@"频次",@"用法",@"单价",@"开嘱医生",@"执行单位"];
     
       }
     return _dataArray;
@@ -64,11 +64,9 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.dataArray.count;
-
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
     ZXYIZhuDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:@"zhu" forIndexPath:indexPath];
     cell.titleL.text = self.dataArray[indexPath.row];
     cell.vulueL.text = self.contArray[indexPath.row];
