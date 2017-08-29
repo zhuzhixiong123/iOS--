@@ -90,7 +90,7 @@
     AFHTTPSessionManager *maneger = [AFHTTPSessionManager manager];
     NSString *tempString = @"2014-06-10%2008:20:00";
     
-    NSString *string = [NSString stringWithFormat:@"http://222.243.168.34:1111/Dev_MobileHIS/patient/%@/otherProgressRecords/%@/page/0/pageSize/10",self.bianHaoID,tempString];
+    NSString *string = [NSString stringWithFormat:@"%@/patient/%@/otherProgressRecords/%@/page/0/pageSize/10",baseUrl,self.bianHaoID,tempString];
     
     NSString *headers = [[NSString alloc] getHttpHeadParts];
     [maneger.requestSerializer setValue:[NSString stringWithFormat:@"Basic %@", headers] forHTTPHeaderField:@"Authorization"];

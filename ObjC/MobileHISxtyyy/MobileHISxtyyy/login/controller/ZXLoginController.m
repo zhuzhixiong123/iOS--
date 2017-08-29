@@ -95,7 +95,7 @@
     manger.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     manger.responseSerializer = [AFHTTPResponseSerializer serializer];
 
-    NSString *urls = [NSString stringWithFormat:@"http://222.243.168.34:1111/Dev_MobileHIS/login?loginId=%@&password=%@",self.countF.text,self.mimaF.text];
+    NSString *urls = [NSString stringWithFormat:@"%@/login?loginId=%@&password=%@",baseUrl,self.countF.text,self.mimaF.text];
     
 [manger GET:urls parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
       [SVProgressHUD dismiss];

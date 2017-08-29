@@ -76,6 +76,9 @@
 		14F29AED1F25F77400ACE970 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14F29AEB1F25F77400ACE970 /* LaunchScreen.storyboard */; };
 		14F29AF81F25F77400ACE970 /* MobileHISxtyyyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F29AF71F25F77400ACE970 /* MobileHISxtyyyTests.m */; };
 		14F29B031F25F77400ACE970 /* MobileHISxtyyyUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F29B021F25F77400ACE970 /* MobileHISxtyyyUITests.m */; };
+		8A00234F1F55468000D99377 /* ZXJianChaDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A00234E1F55468000D99377 /* ZXJianChaDetailController.m */; };
+		8A0023521F554F1400D99377 /* ZXJianChaDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0023511F554F1400D99377 /* ZXJianChaDetailCell.m */; };
+		8A0023551F554F4600D99377 /* ZXJianChaDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0023541F554F4600D99377 /* ZXJianChaDetailModel.m */; };
 		8A06A4D91F4D5D350055710E /* ZXRuYuanController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A06A4D81F4D5D350055710E /* ZXRuYuanController.m */; };
 		8A06A4DC1F4D5D6C0055710E /* ZXBingChengController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A06A4DB1F4D5D6C0055710E /* ZXBingChengController.m */; };
 		8A06A4DF1F4D5DBD0055710E /* ZXYiZhuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A06A4DE1F4D5DBD0055710E /* ZXYiZhuController.m */; };
@@ -92,6 +95,8 @@
 		8A9DFF191F54050D000E121C /* ZXFirstBCController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A9DFF181F54050D000E121C /* ZXFirstBCController.m */; };
 		8A9DFF1C1F540ED5000E121C /* ZXFirstModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A9DFF1B1F540ED5000E121C /* ZXFirstModel.m */; };
 		8A9DFF1F1F540F00000E121C /* ZXFirstCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A9DFF1E1F540F00000E121C /* ZXFirstCell.m */; };
+		8A9DFF221F54219C000E121C /* ZXShouShuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A9DFF211F54219C000E121C /* ZXShouShuController.m */; };
+		8A9DFF251F5421C9000E121C /* ZXWeiJiZhiController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A9DFF241F5421C9000E121C /* ZXWeiJiZhiController.m */; };
 		8AB4ACDD1F4E765F0053352F /* ZXBingChengCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AB4ACDC1F4E765F0053352F /* ZXBingChengCell.m */; };
 		8AB4ACE01F4E7AD80053352F /* ZXBingChengModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AB4ACDF1F4E7AD80053352F /* ZXBingChengModel.m */; };
 		8ADCC4361F4FB28C00C8DF37 /* ZXYiZhuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ADCC4351F4FB28C00C8DF37 /* ZXYiZhuCell.m */; };
@@ -260,6 +265,12 @@
 		14F29AFE1F25F77400ACE970 /* MobileHISxtyyyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MobileHISxtyyyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		14F29B021F25F77400ACE970 /* MobileHISxtyyyUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MobileHISxtyyyUITests.m; sourceTree = "<group>"; };
 		14F29B041F25F77400ACE970 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A00234D1F55468000D99377 /* ZXJianChaDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXJianChaDetailController.h; sourceTree = "<group>"; };
+		8A00234E1F55468000D99377 /* ZXJianChaDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXJianChaDetailController.m; sourceTree = "<group>"; };
+		8A0023501F554F1400D99377 /* ZXJianChaDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZXJianChaDetailCell.h; path = ../model/ZXJianChaDetailCell.h; sourceTree = "<group>"; };
+		8A0023511F554F1400D99377 /* ZXJianChaDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZXJianChaDetailCell.m; path = ../model/ZXJianChaDetailCell.m; sourceTree = "<group>"; };
+		8A0023531F554F4600D99377 /* ZXJianChaDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXJianChaDetailModel.h; sourceTree = "<group>"; };
+		8A0023541F554F4600D99377 /* ZXJianChaDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXJianChaDetailModel.m; sourceTree = "<group>"; };
 		8A06A4D71F4D5D350055710E /* ZXRuYuanController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXRuYuanController.h; sourceTree = "<group>"; };
 		8A06A4D81F4D5D350055710E /* ZXRuYuanController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXRuYuanController.m; sourceTree = "<group>"; };
 		8A06A4DA1F4D5D6C0055710E /* ZXBingChengController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXBingChengController.h; sourceTree = "<group>"; };
@@ -292,6 +303,10 @@
 		8A9DFF1B1F540ED5000E121C /* ZXFirstModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXFirstModel.m; sourceTree = "<group>"; };
 		8A9DFF1D1F540F00000E121C /* ZXFirstCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXFirstCell.h; sourceTree = "<group>"; };
 		8A9DFF1E1F540F00000E121C /* ZXFirstCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXFirstCell.m; sourceTree = "<group>"; };
+		8A9DFF201F54219C000E121C /* ZXShouShuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXShouShuController.h; sourceTree = "<group>"; };
+		8A9DFF211F54219C000E121C /* ZXShouShuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXShouShuController.m; sourceTree = "<group>"; };
+		8A9DFF231F5421C9000E121C /* ZXWeiJiZhiController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXWeiJiZhiController.h; sourceTree = "<group>"; };
+		8A9DFF241F5421C9000E121C /* ZXWeiJiZhiController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXWeiJiZhiController.m; sourceTree = "<group>"; };
 		8AB4ACDB1F4E765F0053352F /* ZXBingChengCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXBingChengCell.h; sourceTree = "<group>"; };
 		8AB4ACDC1F4E765F0053352F /* ZXBingChengCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXBingChengCell.m; sourceTree = "<group>"; };
 		8AB4ACDE1F4E7AD80053352F /* ZXBingChengModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXBingChengModel.h; sourceTree = "<group>"; };
@@ -513,10 +528,16 @@
 				8A06A4DE1F4D5DBD0055710E /* ZXYiZhuController.m */,
 				8ADCC4401F50103200C8DF37 /* ZXYIZhuDetailController.h */,
 				8ADCC4411F50103200C8DF37 /* ZXYIZhuDetailController.m */,
+				8A9DFF201F54219C000E121C /* ZXShouShuController.h */,
+				8A9DFF211F54219C000E121C /* ZXShouShuController.m */,
 				8A06A4E01F4D5DDB0055710E /* ZXJianChaController.h */,
 				8A06A4E11F4D5DDB0055710E /* ZXJianChaController.m */,
+				8A00234D1F55468000D99377 /* ZXJianChaDetailController.h */,
+				8A00234E1F55468000D99377 /* ZXJianChaDetailController.m */,
 				8A06A4E31F4D5DF60055710E /* ZXFuJianController.h */,
 				8A06A4E41F4D5DF60055710E /* ZXFuJianController.m */,
+				8A9DFF231F5421C9000E121C /* ZXWeiJiZhiController.h */,
+				8A9DFF241F5421C9000E121C /* ZXWeiJiZhiController.m */,
 				148EE22E1F27225F00A9F9A5 /* ZXKeShiWeiJiController.h */,
 				148EE22F1F27225F00A9F9A5 /* ZXKeShiWeiJiController.m */,
 			);
@@ -538,6 +559,8 @@
 				8ADCC43B1F4FFCA100C8DF37 /* ZXJianChaModel.m */,
 				8A9DFF1A1F540ED5000E121C /* ZXFirstModel.h */,
 				8A9DFF1B1F540ED5000E121C /* ZXFirstModel.m */,
+				8A0023531F554F4600D99377 /* ZXJianChaDetailModel.h */,
+				8A0023541F554F4600D99377 /* ZXJianChaDetailModel.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -563,6 +586,8 @@
 				8ADCC4441F50143800C8DF37 /* ZXYIZhuDetailCell.m */,
 				8A9DFF1D1F540F00000E121C /* ZXFirstCell.h */,
 				8A9DFF1E1F540F00000E121C /* ZXFirstCell.m */,
+				8A0023501F554F1400D99377 /* ZXJianChaDetailCell.h */,
+				8A0023511F554F1400D99377 /* ZXJianChaDetailCell.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -1027,6 +1052,7 @@
 				8A06A4EB1F4D92810055710E /* ZXRuYuanCell.m in Sources */,
 				8A06A4E81F4D74A10055710E /* ZXKeShidetaiView.m in Sources */,
 				8A547C071F3AAE37000DF5CB /* JYJCommenItem.m in Sources */,
+				8A9DFF221F54219C000E121C /* ZXShouShuController.m in Sources */,
 				145438121F28892300C57BD9 /* NSObject+MJProperty.m in Sources */,
 				1428E6F51F29D75A0086BD4E /* MJRefreshBackGifFooter.m in Sources */,
 				1454380E1F28892300C57BD9 /* MJPropertyType.m in Sources */,
@@ -1045,6 +1071,7 @@
 				143D92331F26D4B300499921 /* HMTabbar.m in Sources */,
 				8A06A4E21F4D5DDB0055710E /* ZXJianChaController.m in Sources */,
 				1454381A1F28914100C57BD9 /* DLPickerView.m in Sources */,
+				8A0023521F554F1400D99377 /* ZXJianChaDetailCell.m in Sources */,
 				1428E6F11F29D75A0086BD4E /* MJRefreshHeader.m in Sources */,
 				1454380D1F28892300C57BD9 /* MJPropertyKey.m in Sources */,
 				143D929B1F26EF6D00499921 /* AFURLRequestSerialization.m in Sources */,
@@ -1083,7 +1110,9 @@
 				8A9DFF1C1F540ED5000E121C /* ZXFirstModel.m in Sources */,
 				1428E6EF1F29D75A0086BD4E /* MJRefreshComponent.m in Sources */,
 				14F29AE21F25F77400ACE970 /* AppDelegate.m in Sources */,
+				8A00234F1F55468000D99377 /* ZXJianChaDetailController.m in Sources */,
 				1428E6B91F29D41E0086BD4E /* ZXKeShiListCell.m in Sources */,
+				8A9DFF251F5421C9000E121C /* ZXWeiJiZhiController.m in Sources */,
 				8ADCC43C1F4FFCA100C8DF37 /* ZXJianChaModel.m in Sources */,
 				1428E6F21F29D75A0086BD4E /* MJRefreshAutoGifFooter.m in Sources */,
 				143D92391F26D59800499921 /* ZXDiscussController.m in Sources */,
@@ -1101,6 +1130,7 @@
 				1454380F1F28892300C57BD9 /* NSObject+MJClass.m in Sources */,
 				1428E6FF1F29D75A0086BD4E /* UIScrollView+MJRefresh.m in Sources */,
 				8A06A4DC1F4D5D6C0055710E /* ZXBingChengController.m in Sources */,
+				8A0023551F554F4600D99377 /* ZXJianChaDetailModel.m in Sources */,
 				143D929C1F26EF6D00499921 /* AFURLResponseSerialization.m in Sources */,
 				145438161F28896600C57BD9 /* ZXKeShiModel.m in Sources */,
 				8A06A4D91F4D5D350055710E /* ZXRuYuanController.m in Sources */,

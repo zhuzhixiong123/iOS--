@@ -64,7 +64,7 @@
     _page += 1;
     
     AFHTTPSessionManager *maneger = [AFHTTPSessionManager manager];
-    NSString *urlString = [NSString stringWithFormat:@"http://222.243.168.34:1111/Dev_MobileHIS/patient/department/%@/page/%ld/pageSize/10",self.dictPass[@"departmentId"],_page];
+    NSString *urlString = [NSString stringWithFormat:@"%@/patient/department/%@/page/%ld/pageSize/10",baseUrl,self.dictPass[@"departmentId"],_page];
     
     NSString *headers = [[NSString alloc] getHttpHeadParts];
     
@@ -101,7 +101,7 @@
     _page = 0;
     self.dictPass = note.userInfo;
     AFHTTPSessionManager *maneger = [AFHTTPSessionManager manager];
-    NSString *urlString = [NSString stringWithFormat:@"http://222.243.168.34:1111/Dev_MobileHIS/patient/department/%@/page/%ld/pageSize/10",self.dictPass[@"departmentId"],_page];
+    NSString *urlString = [NSString stringWithFormat:@"%@/patient/department/%@/page/%ld/pageSize/10",baseUrl,self.dictPass[@"departmentId"],_page];
     
     NSString *headers = [[NSString alloc] getHttpHeadParts];
     [maneger.requestSerializer setValue:[NSString stringWithFormat:@"Basic %@", headers] forHTTPHeaderField:@"Authorization"];

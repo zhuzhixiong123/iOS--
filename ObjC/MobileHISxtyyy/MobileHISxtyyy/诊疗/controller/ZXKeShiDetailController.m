@@ -12,6 +12,8 @@
 #import "ZXYiZhuController.h"
 #import "ZXJianChaController.h"
 #import "ZXFuJianController.h"
+#import "ZXShouShuController.h"
+#import "ZXWeiJiZhiController.h"
 
 #import "ZXKeShidetaiView.h"
 #import "ZXKeShiListModel.h"
@@ -29,7 +31,7 @@
 
 @property(nonatomic,strong) NSMutableArray *btns;
 
-@property(nonatomic,weak) UIView *titleView;
+@property(nonatomic,weak) UIScrollView *titleView;
 
 @end
 
@@ -44,19 +46,17 @@
 
 -(NSArray *)titileS{
     if (_titileS == nil) {
-        _titileS  = @[@"入院",@"病程",@"医嘱",@"检查",@"辅检"];
+        _titileS  = @[@"入院",@"病程",@"医嘱",@"手术",@"检查",@"辅检",@"危机值"];
     }
     return _titileS;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     [self setUpVc];
     [self loadHeadView];
     [self loadContView];
     [self addchildViewController];
-    
     
     UIButton *btn = self.btns[0];
     [self btnClick:btn];
@@ -66,11 +66,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationItem.title = @"详细信息";
     self.automaticallyAdjustsScrollViewInsets = NO;
-    
-    
 }
-
-
 
 -(void)loadHeadView{
     ZXKeShidetaiView *headView = [[ZXKeShidetaiView alloc] initWithFrame:CGRectMake(0, 64, Screen_H, 120)];
@@ -86,11 +82,10 @@
     headView.xingZhiDet.text = self.model.type;
     headView.huLiDet.text = self.model.nursingLevel;
     [self.view addSubview:headView];
-    
 }
 
 -(void)loadContView{
-    UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.headView.frame), Screen_W, 44)];
+    UIScrollView *titleView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.headView.frame), Screen_W, 44)];
     self.titleView = titleView;
     [titleView setBackgroundColor:HMColor];
     [self.view addSubview:titleView];
@@ -112,14 +107,14 @@
         
     }
     
+    titleView.contentSize = CGSizeMake(self.titileS.count * btn_w, 0);
     UIScrollView *scrollview = [[UIScrollView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(titleView.frame), Screen_W, Screen_H - CGRectGetMaxY(titleView.frame))];
     scrollview.delegate = self;
     self.scrollview = scrollview;
     scrollview.pagingEnabled = YES;
     scrollview.bounces = NO;
     [self.view addSubview:scrollview];
-    scrollview.contentSize = CGSizeMake(Screen_W * 5, 0);
-    
+    scrollview.contentSize = CGSizeMake(Screen_W * self.titileS.count, 0);
 }
 
 
@@ -128,8 +123,25 @@
     [self btnChangeColor:btn];
     //改变contScollview的内容
     [self contChange: btn.tag];
+    //文字居中
+    [self textTurnCenter:btn];
     //设置偏移量
     self.scrollview.contentOffset = CGPointMake(Screen_W *  btn.tag, 0);
+}
+
+//文字居中
+-(void)textTurnCenter:(UIButton*)btn{
+    CGFloat offset =  btn.center.x - Screen_W *0.5;
+    if (offset < 0) {
+        offset = 0;
+    }
+    
+    CGFloat max = self.titleView.contentSize.width - Screen_W;
+    if (offset > max) {
+        offset = max;
+    }
+    
+    self.titleView.contentOffset = CGPointMake(offset, 0);
 }
 
 //按钮的颜色变化
@@ -139,7 +151,6 @@
     [btn setTitleColor:mainColor forState:UIControlStateNormal];
     btn.transform = CGAffineTransformMakeScale(1.2, 1.2);
     _clickedBtn = btn;
-    
 }
 
 //contScollview内容的变化
@@ -158,6 +169,8 @@
     [self btnChangeColor:btn];
     //改变contScollview内容
     [self contChange:i];
+    //文字居中
+    [self textTurnCenter:btn];
     
 //    CGRect titleFrame = self.titleView.frame;
 //    titleFrame.origin.y = 64;
@@ -171,7 +184,6 @@
 
 #pragma mark-----------添加子控制器
 -(void)addchildViewController{
-    
     ZXRuYuanController *q1 = [[ZXRuYuanController alloc]init];
     q1.bianHaoID = self.model.hospitalId;
     [self addChildViewController:q1];
@@ -186,6 +198,9 @@
     NSLog(@"***%@",self.model.hospitalId);
     [self addChildViewController:w4];
     
+    ZXShouShuController *shouVc = [[ZXShouShuController alloc] init];
+    [self addChildViewController:shouVc];
+    
     ZXJianChaController *w5 = [[ZXJianChaController alloc]init];
     w5.bianHaoID = self.model.hospitalId;
     [self addChildViewController:w5];
@@ -193,6 +208,8 @@
     ZXFuJianController *w6 = [[ZXFuJianController alloc]init];
     [self addChildViewController:w6];
     
+    ZXWeiJiZhiController *weiVc = [[ZXWeiJiZhiController alloc] init];
+    [self addChildViewController:weiVc];
 }
 
 

@@ -9,6 +9,9 @@
 #import "ZXJianChaController.h"
 #import "ZXJianChaCell.h"
 #import "ZXJianChaModel.h"
+
+#import "ZXJianChaDetailController.h"
+
 @interface ZXJianChaController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property(nonatomic,weak) UITableView *tableView;
@@ -58,21 +61,18 @@
     
     //下拉刷新
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewDate)];
-
 }
 
 -(void)loadNewDate{
     [self.tableView.mj_header endRefreshing];
-    
 }
 
 -(void)loadMoreDate{
-    
     _page += 1;
     
     AFHTTPSessionManager *maneger = [AFHTTPSessionManager manager];
     NSString *tempString = @"2014-03-01%2011:14:00";
-    NSString *urlString  = [NSString stringWithFormat:@"http://222.243.168.34:1111/Dev_MobileHIS/patient/%@/examResult/%@/page/%ld/pageSize/10",self.bianHaoID,tempString,_page] ;
+    NSString *urlString  = [NSString stringWithFormat:@"%@/patient/%@/examResult/%@/page/%ld/pageSize/10",baseUrl,self.bianHaoID,tempString,_page] ;
     
     NSString *headers = [[NSString alloc] getHttpHeadParts];
     
@@ -103,7 +103,7 @@
     
     AFHTTPSessionManager *maneger = [AFHTTPSessionManager manager];
     NSString *tempString = @"2014-03-01%2011:14:00";
-    NSString *string = [NSString stringWithFormat:@"http://222.243.168.34:1111/Dev_MobileHIS/patient/%@/examResult/%@/page/0/pageSize/10",self.bianHaoID,tempString];
+    NSString *string = [NSString stringWithFormat:@"%@/patient/%@/examResult/%@/page/0/pageSize/10",baseUrl,self.bianHaoID,tempString];
     
     NSString *headers = [[NSString alloc] getHttpHeadParts];
     [maneger.requestSerializer setValue:[NSString stringWithFormat:@"Basic %@", headers] forHTTPHeaderField:@"Authorization"];
@@ -132,7 +132,6 @@
     ZXJianChaCell *cell = [tableView dequeueReusableCellWithIdentifier:@"zhu" forIndexPath:indexPath];
     cell.model = self.dataArray[indexPath.row];
     return cell;
-
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -149,6 +148,14 @@
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     // 3点击没有颜色改变
     cell.selected = NO;
+    
+    
+    ZXJianChaModel *model = self.dataArray[indexPath.row];
+    
+    ZXJianChaDetailController *detail = [[ZXJianChaDetailController alloc] init];
+    detail.detailUrl = model.sampleDetailsUrl;
+    [self.navigationController pushViewController:detail animated:YES];
+    
 }
 
 @end

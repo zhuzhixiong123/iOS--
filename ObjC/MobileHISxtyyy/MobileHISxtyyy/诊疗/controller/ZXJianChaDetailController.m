@@ -1,25 +1,23 @@
 //
-//  ZXFirstBCController.m
+//  ZXJianChaDetailController.m
 //  MobileHISxtyyy
 //
-//  Created by xianxun on 2017/8/28.
+//  Created by xianxun on 2017/8/29.
 //  Copyright © 2017年 志雄 朱. All rights reserved.
 //
 
-#import "ZXFirstBCController.h"
+#import "ZXJianChaDetailController.h"
 
-#import "ZXFirstCell.h"
-#import "ZXFirstModel.h"
-
-@interface ZXFirstBCController ()<UITableViewDelegate,UITableViewDataSource>
+#import "ZXJianChaDetailCell.h"
+#import "ZXJianChaDetailModel.h"
+@interface ZXJianChaDetailController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property(nonatomic,weak) UITableView *tableView;
-
 @property(nonatomic,strong) NSArray *dataArray;
 
 @end
 
-@implementation ZXFirstBCController
+@implementation ZXJianChaDetailController
 
 -(NSArray *)dataArray{
     if (_dataArray == nil) {
@@ -33,53 +31,53 @@
         UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
         tableView.dataSource = self;
         tableView.delegate = self;
+        tableView.rowHeight = 57;
+        tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         [self.view addSubview:tableView];
         _tableView = tableView;
     }
     return _tableView;
 }
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setUpVc];
     [self loadData];
+    
+    
 }
 
 -(void)setUpVc{
     self.view.backgroundColor = [UIColor whiteColor];
-    self.navigationItem.title = @"首次病程记录";
-    [self.tableView registerClass:[ZXFirstCell class] forCellReuseIdentifier:@"zhu"];
+    self.navigationItem.title = @"检查详情";
+    
+    [self.tableView registerClass:[ZXJianChaDetailCell class] forCellReuseIdentifier:@"zhu"];
+    self.tableView.tableFooterView = [[UIView alloc] init];
+    
 }
 
 -(void)loadData{
+
     AFHTTPSessionManager *maneger = [AFHTTPSessionManager manager];
-    NSString *tempString = @"2014-06-10%2008:20:00";
-    
-    NSString *string = [NSString stringWithFormat:@"%@/patient/%@/firstProgressRecord/%@",baseUrl,self.bianHaoID,tempString];
+    NSString *string = [NSString stringWithFormat:@"%@%@",baseUrl,self.detailUrl];
     
     NSString *headers = [[NSString alloc] getHttpHeadParts];
     [maneger.requestSerializer setValue:[NSString stringWithFormat:@"Basic %@", headers] forHTTPHeaderField:@"Authorization"];
     [SVProgressHUD showWithStatus:@"加载数据..."];
     
     [maneger GET:string parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+//        NSLog(@"++**++%@",responseObject);
         [SVProgressHUD dismiss];
-        NSArray *titleS = responseObject[@"content"];
         
-        NSString *keys = @"titles";
-        NSMutableArray *arrM = [NSMutableArray array];
-        for (int a = 0; a < titleS.count; a++) {
-            NSDictionary *dict = [NSDictionary dictionaryWithObject:titleS[a] forKey:keys];
-            
-            ZXFirstModel *model = [ZXFirstModel modelWithDict:dict];
-            [arrM addObject:model];
-        }
-    
-        self.dataArray = arrM;
+        self.dataArray = [ZXJianChaDetailModel mj_objectArrayWithKeyValuesArray:responseObject];
+        
         [self.tableView reloadData];
-     
+        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+          [SVProgressHUD dismiss];
         NSLog(@"%@",error);
     }];
-    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -87,16 +85,21 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    ZXFirstCell *cell = [tableView dequeueReusableCellWithIdentifier:@"zhu" forIndexPath:indexPath];
+    ZXJianChaDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:@"zhu" forIndexPath:indexPath];
+    
     cell.model = self.dataArray[indexPath.row];
     return cell;
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    ZXFirstModel *model = self.dataArray[indexPath.row];
-    CGFloat height = [[NSString alloc] heightWithText:model.titles andFont:12 andWidth:Screen_W - 24];
-    return height + 10;
 
-}
+
+
+
+
+
+
+
+
+
 
 @end

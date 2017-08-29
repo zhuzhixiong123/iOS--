@@ -29,9 +29,9 @@
     NSInteger _page;
     //用于切换短期和长期
     NSString *_timeString;
-    
-//    NSMutableArray *_dataArray;
 }
+
+
 
 -(NSMutableArray *)dataArray{
     if (_dataArray == nil) {
@@ -97,7 +97,7 @@
     _page += 1;
     
     AFHTTPSessionManager *maneger = [AFHTTPSessionManager manager];
-    NSString *urlString  = [NSString stringWithFormat:@"http://222.243.168.34:1111/Dev_MobileHIS/patient/%@/%@/page/%ld/pageSize/10",self.bianHaoID,_timeString,_page];;
+    NSString *urlString  = [NSString stringWithFormat:@"%@/patient/%@/%@/page/%ld/pageSize/10",baseUrl,self.bianHaoID,_timeString,_page];;
     
     NSString *headers = [[NSString alloc] getHttpHeadParts];
     
@@ -119,8 +119,7 @@
                 ZXYiZhuModel *model = [ZXYiZhuModel mj_objectWithKeyValues:dict];
                 [arrM addObject:model];
         }
-            
-        }
+            }
             
         [self.dataArray addObjectsFromArray:arrM];
         [self.tableView reloadData];
@@ -133,17 +132,14 @@
 
 
 -(void)choiceClick:(UISegmentedControl*)sender{
-    
     if (sender.selectedSegmentIndex == 1) {
         _timeString = @"shortTermDoctorNote";
-        
         [self loadData];
         _page = 0;
     }
     
     if (sender.selectedSegmentIndex == 0) {
           _timeString = @"longTermDoctorNote";
-        
         [self loadData];
         _page = 0;
     }
@@ -151,7 +147,7 @@
 
 -(void)loadData{
     AFHTTPSessionManager *maneger = [AFHTTPSessionManager manager];
-    NSString *string = [NSString stringWithFormat:@"http://222.243.168.34:1111/Dev_MobileHIS/patient/%@/%@/page/0/pageSize/10",self.bianHaoID,_timeString];
+    NSString *string = [NSString stringWithFormat:@"%@/patient/%@/%@/page/0/pageSize/10",baseUrl,self.bianHaoID,_timeString];
     
     NSString *headers = [[NSString alloc] getHttpHeadParts];
     [maneger.requestSerializer setValue:[NSString stringWithFormat:@"Basic %@", headers] forHTTPHeaderField:@"Authorization"];
@@ -160,14 +156,13 @@
     [maneger GET:string parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [SVProgressHUD dismiss];
         NSArray *array = responseObject[@"result"];
-        NSLog(@"*****%@",array);
+        NSLog(@"*****%ld",array.count);
         NSMutableArray *arrM = [NSMutableArray array];
         
         for (NSArray *arr in array) {
             for (NSDictionary *dict in arr) {
                 ZXYiZhuModel *model = [ZXYiZhuModel mj_objectWithKeyValues:dict];
                 [arrM addObject:model];
-                
             }
         }
         _dataArray = arrM;
@@ -175,10 +170,8 @@
         [self.tableView reloadData];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"%@",error);
-        
     }];
 }
-
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -186,8 +179,7 @@
 
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-
-
+    
     ZXYiZhuCell *cell = [tableView dequeueReusableCellWithIdentifier:@"zhu" forIndexPath:indexPath];
     cell.model = self.dataArray[indexPath.row];
     return cell;
@@ -203,20 +195,15 @@
     
     ZXYiZhuModel *model = self.dataArray[indexPath.row];
     NSLog(@"标题是:  %@",model.title);
-    
     ZXYIZhuDetailController *detailVc  =[[ZXYIZhuDetailController alloc] init];
     detailVc.model = model;
     [self.navigationController pushViewController:detailVc animated:YES];
 }
 
-
 //-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
 //    return 10;
-//
 //}
-//
 //-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-//
 //    return 0.01;
 //}
 

@@ -57,7 +57,7 @@
 -(void)loadData{
     AFHTTPSessionManager *maneger = [AFHTTPSessionManager manager];
     NSString *tempString = @"2014-06-23%2010:31:00";
-    NSString *urls = [NSString stringWithFormat:@"http://222.243.168.34:1111/Dev_MobileHIS/patient/%@/admission/%@",self.bianHaoID,tempString];
+    NSString *urls = [NSString stringWithFormat:@"%@/patient/%@/admission/%@",baseUrl,self.bianHaoID,tempString];
     
     NSString *headers = [[NSString alloc] getHttpHeadParts];
     [maneger.requestSerializer setValue:[NSString stringWithFormat:@"Basic %@", headers] forHTTPHeaderField:@"Authorization"];

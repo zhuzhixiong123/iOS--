@@ -170,7 +170,7 @@
 -(void)rightClick:(UIButton*)optionButton{
     AFHTTPSessionManager *maneger = [AFHTTPSessionManager manager];
     NSString *username = [[NSUserDefaults standardUserDefaults] stringForKey:@"userID"];
-    NSString *urlString = [NSString stringWithFormat:@"http://222.243.168.34:1111/Dev_MobileHIS/user/%@/imei/111",username];
+    NSString *urlString = [NSString stringWithFormat:@"%@/user/%@/imei/111",baseUrl,username];
  
     NSString *headers = [[NSString alloc] getHttpHeadParts];
     
@@ -209,7 +209,6 @@
             [[NSNotificationCenter defaultCenter] postNotificationName:@"keshi_click" object:nil userInfo:dict];
             }
         } whichFrame:frame animate:YES] option_show];
-        
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"%@",error);
