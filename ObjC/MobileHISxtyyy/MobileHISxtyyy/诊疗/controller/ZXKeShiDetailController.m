@@ -194,8 +194,6 @@
     
     ZXYiZhuController *w4 = [[ZXYiZhuController alloc]init];
     w4.bianHaoID = self.model.hospitalId;
-    
-    NSLog(@"***%@",self.model.hospitalId);
     [self addChildViewController:w4];
     
     ZXShouShuController *shouVc = [[ZXShouShuController alloc] init];
@@ -206,6 +204,7 @@
     [self addChildViewController:w5];
     
     ZXFuJianController *w6 = [[ZXFuJianController alloc]init];
+    w6.bianHaoID = self.model.hospitalId;
     [self addChildViewController:w6];
     
     ZXWeiJiZhiController *weiVc = [[ZXWeiJiZhiController alloc] init];

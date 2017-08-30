@@ -91,10 +91,9 @@
     
     NSDateFormatter *format = [[NSDateFormatter alloc] init];
     
-    format.dateFormat = @"HH:mm";
+    format.dateFormat = @"YYYY-MM-dd  HH:mm";
     
     NSString *string = [format stringFromDate:date];
-    
     return string;
 }
 
@@ -106,7 +105,7 @@
     formatter.timeZone = [NSTimeZone timeZoneWithName:@"shanghai"];
     [formatter setDateStyle:NSDateFormatterMediumStyle];
     [formatter setTimeStyle:NSDateFormatterShortStyle];
-    [formatter setDateFormat:@"HH:mm"];
+    [formatter setDateFormat:@"yyyy-MM-dd HH:mm aa"];
     
     // 毫秒值转化为秒
     NSDate* date = [NSDate dateWithTimeIntervalSince1970:[timeString doubleValue]/ 1000.0];
@@ -115,29 +114,6 @@
 }
 
 
-
-
-
-
-
-- (NSString *)getDate:(NSString *)date
-{
-    NSDateFormatter* dateformatter = [[NSDateFormatter alloc] init];//实例化一个NSDateFormatter对象
-    
-    [dateformatter setDateFormat:@"YYYY-MM-dd"];//设定时间格式,这里可以设置成自己需要的格式
-    
-    NSDate *date1 =[dateformatter dateFromString:date];
-    
-//    NSDate * senddate=[NSDate date];
-//    NSDateFormatter  *dateformatter=[[NSDateFormatter alloc] init];
-//    [dateformatter setDateFormat:@"YYYY-MM-dd"];
-    NSString *  locationString=[dateformatter stringFromDate:date1];
-    NSDate * now = [dateformatter dateFromString:locationString];
-    //转成时间戳
-    
-    NSString *timeSp = [NSString stringWithFormat:@"%ld", (long)[now timeIntervalSince1970]*1000];
-    return timeSp;
-}
 
 
 
@@ -196,8 +172,6 @@
     [formatter setDateFormat:@"yyyy.MM.dd EEEE HH:mm"];
     NSString *dateTime=[formatter stringFromDate:[NSDate date]];
     NSDate *date = [formatter dateFromString:dateTime];
-    
-    NSLog(@"---------- currentDate == %@",date);
     return date;
 }
 
@@ -207,7 +181,6 @@
     NSDateFormatter * dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy.MM.dd"];
     NSString *currentDateStr = [dateFormatter stringFromDate:mydate];
-
     return currentDateStr;
 }
 

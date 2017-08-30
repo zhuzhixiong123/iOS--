@@ -31,7 +31,7 @@
         UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
         tableView.dataSource = self;
         tableView.delegate = self;
-        tableView.rowHeight = 57;
+        tableView.rowHeight = 55;
         tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         [self.view addSubview:tableView];
         _tableView = tableView;
@@ -44,8 +44,6 @@
     [super viewDidLoad];
     [self setUpVc];
     [self loadData];
-    
-    
 }
 
 -(void)setUpVc{
@@ -54,11 +52,9 @@
     
     [self.tableView registerClass:[ZXJianChaDetailCell class] forCellReuseIdentifier:@"zhu"];
     self.tableView.tableFooterView = [[UIView alloc] init];
-    
 }
 
 -(void)loadData{
-
     AFHTTPSessionManager *maneger = [AFHTTPSessionManager manager];
     NSString *string = [NSString stringWithFormat:@"%@%@",baseUrl,self.detailUrl];
     
@@ -67,7 +63,7 @@
     [SVProgressHUD showWithStatus:@"加载数据..."];
     
     [maneger GET:string parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-//        NSLog(@"++**++%@",responseObject);
+        NSLog(@"++**++%@",responseObject);
         [SVProgressHUD dismiss];
         
         self.dataArray = [ZXJianChaDetailModel mj_objectArrayWithKeyValuesArray:responseObject];
@@ -86,7 +82,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     ZXJianChaDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:@"zhu" forIndexPath:indexPath];
-    
     cell.model = self.dataArray[indexPath.row];
     return cell;
 }

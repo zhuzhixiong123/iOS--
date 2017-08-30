@@ -54,6 +54,7 @@
     
     UITextField *mimaF = [[UITextField alloc] initWithFrame:CGRectMake(25, CGRectGetMaxY(countF.frame) + 25, Screen_W - 50, 32)];
     mimaF.placeholder = @"请输入密码";
+    mimaF.secureTextEntry = YES;
     mimaF.keyboardType = UIKeyboardTypeNumberPad;
     mimaF.clearButtonMode = UITextFieldViewModeAlways;
     self.mimaF = mimaF;

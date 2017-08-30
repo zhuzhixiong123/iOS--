@@ -14,8 +14,9 @@
 #import "NSString+NTES.h"
 #import "MJExtension.h"
 #import "MJRefresh.h"
+#import "UIImageView+WebCache.h"
 
-#define baseUrl  @"http://222.243.168.34:1111/Dev_MobileHIS"
+#define baseUrl  @"http://222.243.168.34:1111/ZZXDev_MobileHIS"
 
 
 #define Screen_H        [UIScreen mainScreen].bounds.size.height

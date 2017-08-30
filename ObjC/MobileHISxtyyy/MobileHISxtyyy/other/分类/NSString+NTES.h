@@ -36,8 +36,6 @@
 //获取当前时间
 -(NSString *)getCurrentDate;
 
-//将几年几月几号转时间戳
--(NSString *)getDate:(NSString *)date;
 
 //得到当前时间
 - (NSDate *)getCurrentTime;
